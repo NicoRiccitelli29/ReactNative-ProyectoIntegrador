@@ -11,12 +11,22 @@ export default function App() {
     <View style={{flex:1, 
                   flexDirection: 'row',
         }}>
-      <View style={{backgroundColor:"red", height:100, width: auto}}> 
+      <View style={{backgroundColor:"red", height:100}}> 
         <Text>Header</Text>
       </View>
-      <View>
+      <View style={{flex:1,
+                    flexDirection:'row',
+                    justifyContent:'space-around',
+                    alignContent:'space-around',
+                    flexWrap:'wrap'
+      }}>
         <ScrollView>
-          <Text>Tarjetas personas</Text>
+          <View style={{backgroundColor:"red", height:150, width:150}}></View>
+          <View style={{backgroundColor:"green", height:150, width:150}}></View>
+          <View style={{backgroundColor:"orange", height:150, width:150}}></View>
+          <View style={{backgroundColor:"blue", height:150, width:150}}></View>
+          <View style={{backgroundColor:"yellow", height:150, width:150}}></View>
+          <View style={{backgroundColor:"red", height:150, width:150}}></View>
         </ScrollView>
       </View>
 
