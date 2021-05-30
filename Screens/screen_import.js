@@ -8,7 +8,7 @@ import{
 
 }from 'react-native';
 
-export default class Screen_Import extends Component {
+class Screen_import extends Component {
     constructor(){
         super();
         this.state={
@@ -18,7 +18,7 @@ export default class Screen_Import extends Component {
 
     componentDidMount(){
         fetch('https://randomuser.me/api?results=10')
-        .then(response => response.json)
+        .then(response => response.json())
         .then( result=>{
             this.setState({usuarios: result.results})
         })
@@ -57,3 +57,4 @@ export default class Screen_Import extends Component {
 
 }
 
+export {Screen_import};

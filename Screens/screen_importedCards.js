@@ -10,7 +10,7 @@ import {
   import AsyncStorage from '@react-native-async-storage/async-storage';
   
   
-  export default class Screen_importedCards extends Component {
+class Screen_importedCards extends Component {
     constructor(){
       super();
       this.state={
@@ -36,7 +36,8 @@ import {
   
     render(){
         const valores = this.state.usuariosImportados.map(item => 
-            <Text key={item.login.uuid}>{item.name.first}{item.name.last}</Text>)
+            <Text key={item.login.uuid}>{item.name.first}{item.name.last}</Text>
+            )
     return (
       <View style={{flex:1, flexDirection: 'column',}}>
         <View style={{backgroundColor:"red", justifyContent:'center',flex:1, flexDirection:"column"}}> 
@@ -44,13 +45,11 @@ import {
         </View>
         <View>
             <Text>Mostramos los datos</Text>
-            {values}
+            {valores}
             <TouchableOpacity onPress={this.getData.bind(this)}>
             <View><Text>Mostrar Datos</Text></View>
             </TouchableOpacity>
-            <TouchableOpacity onPress={this.setState(usuariosImportados=[ ])}>
-            <View><Text>Borrar Datos</Text></View>
-            </TouchableOpacity>
+            
         </View>
 
         <View style={{flex:7}}>
@@ -82,4 +81,5 @@ import {
     );
   }
   }
-  
+
+export {Screen_importedCards};

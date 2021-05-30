@@ -7,14 +7,14 @@ import {
   } from 'react-native';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Screen_import} from './Screens/Screen_import';
+import { Screen_importedCards } from './Screens/screen_importedCards';
 
 
 export default class App extends Component {
  
 render(){
   return (
-    <Screen_import/>
+    <Screen_importedCards/>
   );
 }
 }
