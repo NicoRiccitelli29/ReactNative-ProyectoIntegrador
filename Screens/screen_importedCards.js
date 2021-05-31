@@ -4,10 +4,12 @@ import {
     Text,
     View,
     ScrollView,
-    TouchableOpacity
+    TouchableOpacity,
+    SafeAreaView
     } from 'react-native';
   
   import AsyncStorage from '@react-native-async-storage/async-storage';
+import styles from '../Styles/styles';
   
   
 class Screen_importedCards extends Component {
@@ -39,11 +41,12 @@ class Screen_importedCards extends Component {
             <Text key={item.login.uuid}>{item.name.first}{item.name.last}</Text>
             )
     return (
+      <SafeAreaView style={{flex:1}}>
       <View style={{flex:1, flexDirection: 'column',}}>
-        <View style={{backgroundColor:"red", justifyContent:'center',flex:1, flexDirection:"column"}}> 
-          <Text>Header</Text>
+        <View style={styles.headerViewStyle}> 
+          <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
         </View>
-        <View>
+        <View style={{flex:1}}>
             <Text>Mostramos los datos</Text>
             {valores}
             <TouchableOpacity onPress={this.getData.bind(this)}>
@@ -78,6 +81,7 @@ class Screen_importedCards extends Component {
         </ScrollView>
         </View>
       </View>
+      </SafeAreaView>
     );
   }
   }
