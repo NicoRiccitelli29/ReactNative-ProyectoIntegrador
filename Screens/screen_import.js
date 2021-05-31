@@ -7,6 +7,7 @@ import{
     TouchableOpacity,
 
 }from 'react-native';
+import { Tarjeta } from '../components/Tarjetas';
 
 class Screen_import extends Component {
     constructor(){
@@ -34,22 +35,18 @@ class Screen_import extends Component {
     }
 
     render(){
-        const valores = this.state.usuarios.map(item=>
-            <Text key={item.login.uuid} style={{fontSize:20}}>{item.name.first} {item.name.last} </Text>)
-
-
         return(
             <View>
-                <Text>Tarjetas Para Importar</Text>
-                {valores}
-                <TouchableOpacity onPress={this.storeData.bind(this)}>
-                    <View>
-                        <Text style={{fontSize:20}}>Guardar Datos de Usuarios</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-        )
-    }
+             {this.state.usuarios.map((persona, idx)=>{
+            return(
+             <Tarjeta key={idx} info={persona}  />)
+                    })
+                }
+                 </View>
+            )
+           
+            }
+           
 
 
 
@@ -58,3 +55,14 @@ class Screen_import extends Component {
 }
 
 export {Screen_import};
+
+  {/*<Text>Tarjetas Para Importar</Text>
+                {valores}
+                <TouchableOpacity onPress={this.storeData.bind(this)}>
+                    <View>
+                        <Text style={{fontSize:20}}>Guardar Datos de Usuarios</Text>
+                    </View>
+                </TouchableOpacity>
+            
+            <Text key={item.login.uuid} style={{fontSize:20}}>{item.name.first} {item.name.last} </Text>)
+            */}
