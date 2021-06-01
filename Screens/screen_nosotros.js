@@ -17,7 +17,7 @@ import {
         <View>
             <View>
                 <Text>
-                    Nicolas  Eneo Riccitelli
+                    Nicolas Eneo Riccitelli
                 </Text>
             </View>
             <View>

@@ -28,7 +28,7 @@ class Screen_import extends Component {
     async storeData(){
         try{
             const jsonUsuarios= JSON.stringify(this.state.usuarios);
-            await AsyncStorage.setItem("Usuarios", jsonUsuarios);
+            await AsyncStorage.setItem("Usuarios", jsonUsuarios); //Primero pongo la clave y despues el valor de lo que estoy seteando
             console.log("Datos guardados");
         
         }catch(error){console.log(error);}
