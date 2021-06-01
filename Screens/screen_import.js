@@ -7,6 +7,7 @@ import{
     TouchableOpacity,
 
 }from 'react-native';
+import { getUserData } from '../api/RandomUsers';
 import { Tarjeta } from '../components/Tarjetas';
 
 class Screen_import extends Component {
@@ -18,10 +19,10 @@ class Screen_import extends Component {
     }
 
     componentDidMount(){
-        fetch('https://randomuser.me/api?results=10')
-        .then(response => response.json())
-        .then( result=>{
-            this.setState({usuarios: result.results})
+        getUserData()
+        .then((users)=>{
+            console.log(users);
+            this.setState({usuarios:users})
         })
     }
 
