@@ -15,7 +15,7 @@ export default class App extends Component {
  
 render(){
   return (
-    <Screen_nosotros/>
+    <Screen_import/>
   );
 }
 }

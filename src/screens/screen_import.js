@@ -8,6 +8,7 @@ import{
 
 }from 'react-native';
 import { getUserData } from '../api/RandomUsers';
+import { Tarjeta2 } from '../components/Tarjetas2';
 import { Tarjeta } from '../components/Tarjetas';
 
 class Screen_import extends Component {
@@ -39,14 +40,18 @@ class Screen_import extends Component {
         return(
             <View>
              {this.state.usuarios.map((persona, idx)=>{
-            return(
-             <Tarjeta key={idx} info={persona}  />)
-                    })
-                }
-                 </View>
-            )
+                return(
+               
+                <Tarjeta key={idx} info={persona}/>
            
+        
+                )})
             }
+            </View>
+
+        )
+           
+    }
            
 
 

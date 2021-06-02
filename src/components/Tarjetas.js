@@ -28,7 +28,8 @@ import {
                         flexWrap:'wrap'
           }}>
             
-              <View style={{backgroundColor:"pink", height:150, width:150, margin:15}}>{this.props.info.name.first}</View>
+              <View style={{backgroundColor:"pink", height:150, width:150, margin:15}}><Text>{this.props.info.name.first}</Text></View>
+            
               
             
           </View>
