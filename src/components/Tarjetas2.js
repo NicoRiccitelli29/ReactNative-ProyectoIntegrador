@@ -5,21 +5,21 @@ import {
   View,
   FlatList
   } from 'react-native';
-/*import styles from '../styles/styles';*/
+
 
 class Tarjeta2 extends Component{
-
     constructor(){
         super();
         this.state = {
-            data: []
+
         }
     }
-    data = () => {this.info}
-    keyExtractor = (item,idx) => item.toString();
+
+    
+    keyExtractor = (item,idx) => idx.toString();
     renderItem = ({item}) => {
         return (
-            <View style={styles.card}>
+            <View style={styles.card}> 
                 <Text style={styles.texto}>{item.name.last}, {item.name.first}</Text>
             </View>
         )
@@ -28,11 +28,11 @@ class Tarjeta2 extends Component{
 
     render(){
         return(
-            <View style={styles.container}>
+            <View>
             <View style={styles.header}>
                 <View style= {styles.listContainer}>
                     <FlatList
-                    data={this.data}
+                    data={this.props.info}
                     keyExtractor={this.keyExtractor}
                     renderItem={this.renderItem}
                     ItemSeparatorComponent={this.separator}
@@ -50,24 +50,25 @@ const styles = StyleSheet.create (
     {
         header: {
             flex:1,
-            backgroundColor: 'blue'
+            backgroundColor: 'white'
         },
-        container: {
-            flex:1,
-            backgroundColor: 'green'
-        },
+  
         listContainer: {
-            flex: 11,
+            flex: 10,
             justifyContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
+            backgroundColor: 'white',
+            
         },
         texto: {
             fontSize: 20
         },
         card: {
+            backgroundColor: 'grey',
+            borderRadius: 15,
             flexDirection: 'row',
             margin: 5,
-            width: 250,
+            width: 300,
             height: 100,
             padding: 10
         },

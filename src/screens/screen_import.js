@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import{
     View,
     Text,
-    ScrollView,
+    StyleSheet,
     TouchableOpacity,
 
 }from 'react-native';
@@ -30,7 +30,7 @@ class Screen_import extends Component {
     async storeData(){
         try{
             const jsonUsuarios= JSON.stringify(this.state.usuarios);
-            await AsyncStorage.setItem("Usuarios", jsonUsuarios); //Primero pongo la clave y despues el valor de lo que estoy seteando
+            await AsyncStorage.setItem("Usuarios", jsonUsuarios);
             console.log("Datos guardados");
         
         }catch(error){console.log(error);}
@@ -39,36 +39,18 @@ class Screen_import extends Component {
     render(){
         return(
             <View>
-             {this.state.usuarios.map((persona, idx)=>{
-                return(
-               
-                <Tarjeta key={idx} info={persona}/>
-           
-        
-                )})
-            }
+                <Text>
+                <Tarjeta2 info={this.state.usuarios}/>
+                </Text>
             </View>
 
         )
            
     }
            
-
-
-
-
-
 }
+
+
 
 export {Screen_import};
 
-  {/*<Text>Tarjetas Para Importar</Text>
-                {valores}
-                <TouchableOpacity onPress={this.storeData.bind(this)}>
-                    <View>
-                        <Text style={{fontSize:20}}>Guardar Datos de Usuarios</Text>
-                    </View>
-                </TouchableOpacity>
-            
-            <Text key={item.login.uuid} style={{fontSize:20}}>{item.name.first} {item.name.last} </Text>)
-            */}
