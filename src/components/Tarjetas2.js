@@ -3,26 +3,40 @@ import {
   StyleSheet, 
   Text,
   View,
-  FlatList
+  FlatList,
+  TouchableOpacity
   } from 'react-native';
-import styles from '../styles/Styles';
+import styles from '../styles/styles';
+import { ModalInfo } from './Modal';
 
 
 class Tarjeta2 extends Component{
     constructor(){
         super();
         this.state = {
-            
+            showModal: false,
+            selectedItem: null,
         }
     }
 
     
     keyExtractor = (item,idx) => idx.toString();
+
+    showModal(){
+        this.setState({selectedItem:item , showModal:true})
+    }
+
     renderItem = ({item}) => {
         return (
+           
+            <TouchableOpacity onPress={()=> this.showModal(item)}>
             <View style={styles.cardTarjeta2}> 
                 <Text style={styles.textoTarjeta2}>{item.name.last}, {item.name.first}</Text>
             </View>
+            
+            </TouchableOpacity>
+            
+            
         )
     }
     separator = () => <View style={styles.separator}></View>
@@ -38,8 +52,9 @@ class Tarjeta2 extends Component{
                     renderItem={this.renderItem}
                     ItemSeparatorComponent={this.separator}
                     />
-                </View>
+                 </View>
             </View>
+            
             </View>
         );
 

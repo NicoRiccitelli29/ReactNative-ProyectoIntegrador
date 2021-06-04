@@ -9,7 +9,7 @@ import {
     } from 'react-native';
   
   import AsyncStorage from '@react-native-async-storage/async-storage';
-import styles from '../styles/Styles';
+import styles from '../styles/styles';
   
   
 class Screen_importedCards extends Component {

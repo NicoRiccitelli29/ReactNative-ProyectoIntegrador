@@ -5,7 +5,7 @@ import {
   View,
   ScrollView
   } from 'react-native';
-import styles from '../styles/Styles';
+import styles from '../styles/styles';
 
   class Screen_nosotros extends Component {
         constructor(){

@@ -12,7 +12,8 @@ import{
 import { getUserData } from '../api/RandomUsers';
 import { Tarjeta2 } from '../components/Tarjetas2';
 import { Tarjeta } from '../components/Tarjetas';
-import styles from '../styles/Styles';
+import styles from '../styles/styles';
+import { ModalInfo } from '../components/Modal';
 
 class Screen_import extends Component {
     constructor(){
@@ -29,7 +30,7 @@ class Screen_import extends Component {
     async getDataFromApi(){
             this.setState({activity: true});
             let usuarios = await getUserData();
-            this.setState({users: usuarios, activity: false});
+            this.setState({usuarios: usuarios, activity: false});
             
     }
     async storeData(){
@@ -54,14 +55,15 @@ class Screen_import extends Component {
                         <Text>Obteniendo usuarios...</Text>
                         <ActivityIndicator color="Blue" size='large'/>
                     </>
-                    :   <Text>
+                    :   <>
                             <Tarjeta2 info={this.state.usuarios}/>
-                        </Text>
+                        </>
                     
                     }
                     
                 </View>
                 <Button title='Obtener contactos.' onPress={()=>this.getDataFromApi()}/>
+                
             </View>
 
         )
