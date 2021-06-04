@@ -24,6 +24,34 @@ const styles = StyleSheet.create({
         width:200,
         height:200,
         padding:10
+    },
+    headerTarjeta2: {
+        flex:1,
+        backgroundColor: 'white'
+    },
+
+    listContainerTarjeta2: {
+        flex: 10,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        
+    },
+    textoTarjeta2: {
+        fontSize: 20
+    },
+    cardTarjeta2: {
+        backgroundColor: 'grey',
+        borderRadius: 15,
+        flexDirection: 'row',
+        margin: 5,
+        width: 300,
+        height: 100,
+        padding: 10
+    },
+    imageTarjeta2: {
+        width: 100,
+        height: 100
     }
 })
 
