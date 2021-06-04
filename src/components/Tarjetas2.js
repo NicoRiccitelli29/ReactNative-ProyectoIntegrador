@@ -12,7 +12,7 @@ class Tarjeta2 extends Component{
     constructor(){
         super();
         this.state = {
-
+            
         }
     }
 

@@ -5,28 +5,33 @@ import{
     Text,
     StyleSheet,
     TouchableOpacity,
-
+    ActivityIndicator,
+    Button,
 }from 'react-native';
+
 import { getUserData } from '../api/RandomUsers';
 import { Tarjeta2 } from '../components/Tarjetas2';
 import { Tarjeta } from '../components/Tarjetas';
+import styles from '../styles/Styles';
 
 class Screen_import extends Component {
     constructor(){
         super();
         this.state={
-            usuarios:[]
+            usuarios:[],
+            activity: false,
         }
     }
 
     componentDidMount(){
-        getUserData()
-        .then((users)=>{
-            console.log(users);
-            this.setState({usuarios:users})
-        })
+      
     }
-
+    async getDataFromApi(){
+            this.setState({activity: true});
+            let usuarios = await getUserData();
+            this.setState({users: usuarios, activity: false});
+            
+    }
     async storeData(){
         try{
             const jsonUsuarios= JSON.stringify(this.state.usuarios);
@@ -39,9 +44,24 @@ class Screen_import extends Component {
     render(){
         return(
             <View>
-                <Text>
-                <Tarjeta2 info={this.state.usuarios}/>
-                </Text>
+                <View style={styles.headerViewStyle}> 
+                    <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
+                </View>
+                <View>
+                    {this.state.activity
+                    
+                    ?<>
+                        <Text>Obteniendo usuarios...</Text>
+                        <ActivityIndicator color="Blue" size='large'/>
+                    </>
+                    :   <Text>
+                            <Tarjeta2 info={this.state.usuarios}/>
+                        </Text>
+                    
+                    }
+                    
+                </View>
+                <Button title='Obtener contactos.' onPress={()=>this.getDataFromApi()}/>
             </View>
 
         )
