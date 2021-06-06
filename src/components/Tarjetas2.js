@@ -34,14 +34,15 @@ class Tarjeta2 extends Component{
 
     renderItem = ({item}) => {
         return (
-           
+          
             <TouchableOpacity onPress={()=> this.showModal(item)}>
             <View style={styles.cardTarjeta2}> 
                 <Text style={styles.textoTarjeta2}>{item.name.last}, {item.name.first}</Text>
             </View>
             
             </TouchableOpacity>
-            
+             
+         
             
         )
     }
@@ -50,22 +51,22 @@ class Tarjeta2 extends Component{
     render(){
         return(
             <View>
-            <View style={styles.headerTarjeta2}>
-                <View style= {styles.listContainerTarjeta2}>
-                    <FlatList
-                    data={this.props.info}
-                    keyExtractor={this.keyExtractor}
-                    renderItem={this.renderItem}
-                    ItemSeparatorComponent={this.separator}
-                    />
-                 </View>
+                <View style={styles.headerTarjeta2}>
+                    <View style= {styles.listContainerTarjeta2}>
+                        <FlatList
+                        data={this.props.info}
+                        keyExtractor={this.keyExtractor}
+                        renderItem={this.renderItem}
+                        ItemSeparatorComponent={this.separator}
+                        />
+                    </View>
+                </View>
+                <ModalInfo showModal={this.state.showModal} 
+             // onClose={ this.onClose.bind(this)}
+              value={this.state.selectedItem}
+              />
             </View>
-            <ModalInfo showModal={this.state.showModal} 
-           // onClose={ this.onClose.bind(this)}
-            value={this.state.selectedItem}
-            />
-                
-            </View>
+            
         );
 
     }
