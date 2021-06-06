@@ -1,5 +1,9 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {Component} from 'react';
+import { getUserData } from '../api/RandomUsers';
+import { Tarjeta2 } from '../components/Tarjetas2';
+import styles from '../styles/styles';
+import { ModalInfo } from '../components/Modal';
 import{
     View,
     Text,
@@ -7,13 +11,11 @@ import{
     TouchableOpacity,
     ActivityIndicator,
     Button,
+    SafeAreaView,
 }from 'react-native';
 
-import { getUserData } from '../api/RandomUsers';
-import { Tarjeta2 } from '../components/Tarjetas2';
-import { Tarjeta } from '../components/Tarjetas';
-import styles from '../styles/styles';
-import { ModalInfo } from '../components/Modal';
+
+
 
 class Screen_import extends Component {
     constructor(){
@@ -44,27 +46,28 @@ class Screen_import extends Component {
 
     render(){
         return(
-            <View>
-                <View style={styles.headerViewStyle}> 
-                    <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
-                </View>
+            <SafeAreaView>
                 <View>
-                    {this.state.activity
-                    
-                    ?<>
-                        <Text>Obteniendo usuarios...</Text>
-                        <ActivityIndicator color="Blue" size='large'/>
-                    </>
-                    :   <>
-                            <Tarjeta2 info={this.state.usuarios}/>
-                        </>
-                    
-                    }
-                    
+                    <View style={styles.headerViewStyle}> 
+                        <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
                 </View>
-                <Button title='Obtener contactos.' onPress={()=>this.getDataFromApi()}/>
-                
-            </View>
+                    <View>
+                        {this.state.activity
+                    
+                        ?   <>
+                                <Text>Obteniendo usuarios...</Text>
+                                <ActivityIndicator color="Blue" size='large'/>
+                            </>
+                        :   <>
+                                <Tarjeta2 info={this.state.usuarios}/>
+                            </>
+                    
+                        }
+                    
+                    </View>
+                    <Button title='Obtener contactos.' onPress={()=>this.getDataFromApi()}/>
+                </View>
+            </SafeAreaView>
 
         )
            

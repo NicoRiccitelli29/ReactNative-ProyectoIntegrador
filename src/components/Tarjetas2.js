@@ -21,10 +21,16 @@ class Tarjeta2 extends Component{
 
     
     keyExtractor = (item,idx) => idx.toString();
-
-    showModal(){
+    
+   
+    showModal(item){
         this.setState({selectedItem:item , showModal:true})
     }
+
+
+    //onClose(){
+      //  this.setState({showModal: !this.state.showModal})
+    //}
 
     renderItem = ({item}) => {
         return (
@@ -54,7 +60,11 @@ class Tarjeta2 extends Component{
                     />
                  </View>
             </View>
-            
+            <ModalInfo showModal={this.state.showModal} 
+           // onClose={ this.onClose.bind(this)}
+            value={this.state.selectedItem}
+            />
+                
             </View>
         );
 
