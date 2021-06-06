@@ -12,15 +12,18 @@ import styles from '../styles/styles';
   export class ModalInfo extends Component{
       render(){
           return(
+            
       <Modal visible={this.props.showModal}
                      transparent={true}   
                     animationType='slide'>
-          <View style={{backgroundColor:"blue", height:100}}>
+         <View style={styles.modalContainer}>         
+          <View style={styles.modal}>
                 {this.props.value &&
-                <Text>{this.props.value.name.first}</Text>
+                <Text style={styles.modalText}>{this.props.value.name.first}</Text>
                 }
                 {/*<Text onPress={this.props.onClose()}>Close [X]</Text>*/}
           </View>
+          </View>    
       </Modal>
 
           )}} 

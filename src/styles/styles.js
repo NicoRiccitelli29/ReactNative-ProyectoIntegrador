@@ -53,6 +53,27 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100
     },
+    modalContainer:{
+        flex:1,
+        justifyContent:"flex-end",
+        alignItems:"center"
+    },
+    modal:{
+        height: '70%',
+        width: '100%',
+        backgroundColor:'rgba(0,0,0,0.8)',
+        justifyContent:"center",
+        alignItems:"center",
+        borderTopLeftRadius:20,
+        borderTopRightRadius:20,
+        borderWidth:1,
+        borderStyle:"solid",
+        borderColor:"black"
+    },
+    modalText:{
+        fontSize:20,
+        color:"white"
+    }
     
 })
 
