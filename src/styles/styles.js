@@ -50,8 +50,8 @@ const styles = StyleSheet.create({
         padding: 10
     },
     imageTarjeta2: {
-        width: 100,
-        height: 100
+        width: 50,
+        height: 50
     },
     modalContainer:{
         flex:1,

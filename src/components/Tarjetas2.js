@@ -37,6 +37,7 @@ class Tarjeta2 extends Component{
           
             <TouchableOpacity onPress={()=> this.showModal(item)}>
             <View style={styles.cardTarjeta2}> 
+                <Image style={styles.imageTarjeta2} source={{uri:item.picture.thumbnail}}/>
                 <Text style={styles.textoTarjeta2}>{item.name.last}, {item.name.first}</Text>
             </View>
             

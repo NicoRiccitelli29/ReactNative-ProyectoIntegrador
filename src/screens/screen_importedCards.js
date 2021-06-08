@@ -47,7 +47,7 @@ class Screen_importedCards extends Component {
               <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
             </View>
           <View style={{flex:1}}>
-              <Text>Mostramos los datos</Text>
+              
               {valores}
               <TouchableOpacity onPress={this.getData.bind(this)}>
               <View><Text>Mostrar Datos</Text></View>
