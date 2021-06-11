@@ -52,9 +52,9 @@ class Screen_import extends Component {
                         <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
                 </View>
                 <View>
-                    <Text>Estas en la pagina de obtencion de usuarios</Text>
+                    <Text>¡Estas en la pagina de obtencion de usuarios!</Text>
                     <Text onPress={()=>this.props.navigation.navigate('Screen 2')}>Ir a Usuarios guardados</Text>
-                    <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Sobre nosotros</Text>
+                    <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros ...</Text>
                 </View>
                     <View>
                         {this.state.activity
