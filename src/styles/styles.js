@@ -91,11 +91,11 @@ const styles = StyleSheet.create({
         borderRadius:100,
         alignItems:'center',
         justifyContent:'center',
-        position:'absolute'
+        position:'absolute',
     },
     burguerContainer:{
         position:"absolute",
-        right:10,
+        right:20,
         bottom:10
     }
     
