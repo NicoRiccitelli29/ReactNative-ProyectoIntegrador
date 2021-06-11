@@ -17,7 +17,7 @@ import styles from '../styles/styles';
         return(
         <View style= {styles.nosotrosContenedor}>
             <View>
-                    <Text>Estas en la pagina Sobre Nosotros!</Text>
+                    <Text>¡Estas en la pagina Sobre Nosotros!</Text>
                     <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
                     <Text onPress={()=>this.props.navigation.navigate('Screen 1')}>Ir a Usuarios importados</Text>
                     <Text onPress={()=>this.props.navigation.navigate('Screen 2')}>Ir a Usuarios guardados</Text>

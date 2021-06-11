@@ -42,15 +42,15 @@ class Screen_importedCards extends Component {
              )
     return (
     <SafeAreaView style={{flex:1}}>
-       <View style={{flex:1, flexDirection: 'column',}}>
+       <View>
             <View style={styles.headerViewStyle}> 
               <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
             </View>
             <View>
-                    <Text>Estas en la pagina de usuarios guardados!</Text>
+                    <Text>¡Estas en la pagina de usuarios guardados!</Text>
                     <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
                     <Text onPress={()=>this.props.navigation.navigate('Screen 1')}>Ir a Usuarios importados</Text>
-                    <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Sobre nosotros</Text>
+                    <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros...</Text>
                 </View>
 
          {/* <View style={{flex:1}}>

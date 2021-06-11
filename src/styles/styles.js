@@ -6,7 +6,10 @@ import{
 
 const styles = StyleSheet.create({
     headerViewStyle:{
-        backgroundColor: 'red',  justifyContent:'center',flex:1, flexDirection:"column"
+        backgroundColor: 'blueviolet',  
+        justifyContent:'center',
+        flex:1, 
+        flexDirection:"column"
     },
     headerTextStyle:{
         color: 'white'

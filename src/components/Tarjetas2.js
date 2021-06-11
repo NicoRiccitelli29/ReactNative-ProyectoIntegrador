@@ -28,9 +28,9 @@ class Tarjeta2 extends Component{
     }
 
 
-    //onClose(){
-      //  this.setState({showModal: !this.state.showModal})
-    //}
+    onClose(){
+      this.setState({showModal: !this.state.showModal})
+    }
 
     renderItem = ({item}) => {
         return (
@@ -51,7 +51,7 @@ class Tarjeta2 extends Component{
 
     render(){
         return(
-            <View>
+            <View style={{backgroundColor:"red", height:'85%'}}>
                 <View style={styles.headerTarjeta2}>
                     <View style= {styles.listContainerTarjeta2}>
                         <FlatList
@@ -63,9 +63,9 @@ class Tarjeta2 extends Component{
                     </View>
                 </View>
                 <ModalInfo showModal={this.state.showModal} 
-             // onClose={ this.onClose.bind(this)}
-              value={this.state.selectedItem}
-              />
+                    onClose={ this.onClose.bind(this)}
+                     value={this.state.selectedItem}
+                 />
             </View>
             
         );
