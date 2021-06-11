@@ -46,7 +46,14 @@ class Screen_importedCards extends Component {
             <View style={styles.headerViewStyle}> 
               <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
             </View>
-          <View style={{flex:1}}>
+            <View>
+                    <Text>Estas en la pagina de usuarios guardados!</Text>
+                    <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
+                    <Text onPress={()=>this.props.navigation.navigate('Screen 1')}>Ir a Usuarios importados</Text>
+                    <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Sobre nosotros</Text>
+                </View>
+
+         {/* <View style={{flex:1}}>
               
               {valores}
               <TouchableOpacity onPress={this.getData.bind(this)}>
@@ -69,7 +76,7 @@ class Screen_importedCards extends Component {
           
               </View>
             </ScrollView>
-          </View>
+            </View> */}
         </View>
      </SafeAreaView>
     );
