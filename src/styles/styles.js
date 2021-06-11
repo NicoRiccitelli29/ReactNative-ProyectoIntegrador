@@ -75,7 +75,28 @@ const styles = StyleSheet.create({
     },
     modalText:{
         fontSize:20,
-        color:"white"
+        color:"white",
+    },
+    modalButtonClose:{
+        position:'absolute',
+        right: 20,
+        top:10,
+        fontSize:20,
+        color:"white",
+    },
+    burguerButton:{
+        width:80,
+        height:80,
+        backgroundColor:"blue",
+        borderRadius:100,
+        alignItems:'center',
+        justifyContent:'center',
+        position:'absolute'
+    },
+    burguerContainer:{
+        position:"absolute",
+        right:10,
+        bottom:10
     }
     
 })

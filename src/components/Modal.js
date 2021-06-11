@@ -20,7 +20,7 @@ import styles from '../styles/styles';
                 {this.props.value &&
                 <Text style={styles.modalText}>{this.props.value.name.first}</Text>
                 }
-                <Text onPress={this.props.onClose} style={{color:'white'}}>Close [X]</Text>
+                <Text onPress={this.props.onClose} style={styles.modalButtonClose}>Close [X]</Text>
           </View>
           </View>    
       </Modal>
