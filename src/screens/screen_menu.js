@@ -26,7 +26,7 @@ import styles from '../styles/styles';
                 <View style={styles.burguerContainer}> 
                     <TouchableOpacity onPress={()=> this.props.navigation.openDrawer()}> 
                         <View style={styles.burguerButton}>
-                           {/* <Image source='../../../assets/burguerButton'/>*/}
+                            <Image source={require('../../../assets/burguerButton')}/>
                         </View>    
                     </TouchableOpacity>
                 </View>
