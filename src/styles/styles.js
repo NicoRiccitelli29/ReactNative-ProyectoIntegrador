@@ -97,6 +97,12 @@ const styles = StyleSheet.create({
         position:"absolute",
         right:20,
         bottom:10
+    },
+    menuTitle :{
+        fontSize:50 ,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'cornflowerblue',
     }
     
 })

@@ -28,6 +28,7 @@ render(){
         drawerPosition="left"
         drawerType="slide"
         overlayColor="azure"
+        initialRouteName="Menu"
       >
         <Drawer.Screen name='Screen 0' component={Screen_Menu} option={{title:"Menu"}}/>
         <Drawer.Screen name='Screen 1' component={Screen_import} option={{title:"Importar Tarjetas"}}/>
