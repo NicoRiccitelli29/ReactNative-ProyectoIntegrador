@@ -19,14 +19,14 @@ import styles from '../styles/styles';
     render(){
         return(
             <SafeAreaView>
-                <View>
-                    <Text>Bienvenido a la Aplicacion</Text>
-                    <Text> DNT React Native</Text>
+                <View style={styles.menuContainer}>
+                    <Text style={styles.menuTitle}>Bienvenido a la Aplicacion</Text>
+                    <Text style={styles.menuText}>  DNT React Native</Text>
                 </View>
                 <View style={styles.burguerContainer}> 
                     <TouchableOpacity onPress={()=> this.props.navigation.openDrawer()}> 
                         <View style={styles.burguerButton}>
-                            <Image source={require('../../../assets/burguerButton')}/>
+                            <Image style={styles.imagenMenu} source={require('../Img/burguerButton.png')}/>
                         </View>    
                     </TouchableOpacity>
                 </View>

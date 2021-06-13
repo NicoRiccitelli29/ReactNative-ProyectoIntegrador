@@ -85,9 +85,9 @@ const styles = StyleSheet.create({
         color:"white",
     },
     burguerButton:{
-        width:80,
-        height:80,
-        backgroundColor:"blue",
+        width:60,
+        height:60,
+        //backgroundColor:"blue",
         borderRadius:100,
         alignItems:'center',
         justifyContent:'center',
@@ -95,16 +95,29 @@ const styles = StyleSheet.create({
     },
     burguerContainer:{
         position:"absolute",
-        right:20,
-        bottom:10
+        left:10,
+        top:10
     },
-    menuTitle :{
-        fontSize:50 ,
+    menuContainer:{
+        
         alignItems: 'center',
         justifyContent: 'center',
+    },
+    menuTitle :{
+        fontSize:30 ,
         backgroundColor: 'cornflowerblue',
+        position: 'absolute',
+        top: 300
+    },
+    imagenMenu:{
+        width:60,
+        height:60
+    },
+    menuText:{
+        fontSize:20,
+        color:"black"
+        
     }
-    
 })
 
 export default styles

@@ -37,8 +37,10 @@ class Tarjeta2 extends Component{
           
             <TouchableOpacity onPress={()=> this.showModal(item)}>
             <View style={styles.cardTarjeta2}> 
-               {/* <Image style={styles.imageTarjeta2} source={{uri:item.picture.thumbnail}}/>*/}
+               {/*<Image style={styles.imageTarjeta2} source= {require({'item.picture.thumbnail'})}/>*/}
                 <Text style={styles.textoTarjeta2}>{item.name.last}, {item.name.first}</Text>
+                <Text style={styles.textoTarjeta2}>{item.email}</Text>
+                <Text style={styles.textoTarjeta2}>{item.dob.date} ({item.dob.age})</Text>
             </View>
             
             </TouchableOpacity>
@@ -60,6 +62,7 @@ class Tarjeta2 extends Component{
                         renderItem={this.renderItem}
                         ItemSeparatorComponent={this.separator}
                         />
+                        <Text>Presione la tarjeta para ver detalle</Text>
                     </View>
                 </View>
                 <ModalInfo showModal={this.state.showModal} 
