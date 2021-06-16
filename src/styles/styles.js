@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
     cardTarjeta2: {
         backgroundColor: 'grey',
         borderRadius: 15,
-        flexDirection: 'row',
+        flexDirection: 'column',
         margin: 5,
         width: 300,
         height: 100,
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     modal:{
         height: '70%',
         width: '100%',
-        backgroundColor:'rgba(0,0,0,0.8)',
+        backgroundColor:'rgba(0,0,0,0.9)',
         justifyContent:"center",
         alignItems:"center",
         borderTopLeftRadius:20,
@@ -117,6 +117,11 @@ const styles = StyleSheet.create({
         fontSize:20,
         color:"black"
         
+    },
+    TextoInput:{
+        height:20,
+        margin:12,
+        borderWidth:1,
     }
 })
 

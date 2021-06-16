@@ -47,9 +47,9 @@ class Screen_importedCards extends Component {
                   </View>
                   <View>
                           <Text>¡Estas en la pagina de Tarjetas importadas!</Text>
-                          <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
+                         {/*} <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
                           <Text onPress={()=>this.props.navigation.navigate('Importar tarjetas')}>Ir a importar tarjetas</Text>
-                          <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros...</Text>
+      <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros...</Text>{*/}
                   </View>
                   <View>
                   <Tarjeta2 info={this.state.usuariosImportados}/>

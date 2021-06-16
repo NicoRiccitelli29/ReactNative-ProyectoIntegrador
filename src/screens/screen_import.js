@@ -12,6 +12,7 @@ import{
     ActivityIndicator,
     Button,
     SafeAreaView,
+    TextInput,
 }from 'react-native';
 
 
@@ -54,10 +55,10 @@ class Screen_import extends Component {
 
                     <View>
                         <Text>¡Estas en la pagina de obtencion de usuarios!</Text>
-                        <Text onPress={()=>this.props.navigation.navigate('Tarjetas importadas')}>Ir a tarjetas importadas</Text>
-                        <Text onPress={()=>this.props.navigation.navigate('Nosotros')}>Acerca de nosotros ...</Text>
+                       {/*} <TextInput style={styles.TextoInput} type="number" min="1" onChange={(event) => this.setState({UsuariosAImportar: event.target.value})}   placeholder="Ingrese un número"/>
+                       <Text onPress={()=>this.props.navigation.navigate('Tarjetas importadas')}>Ir a tarjetas importadas</Text>
+                        <Text onPress={()=>this.props.navigation.navigate('Nosotros')}>Acerca de nosotros ...</Text>{*/}
                     </View>
-
                     <View>
                         {this.state.activity
                         ?   <>
@@ -69,7 +70,6 @@ class Screen_import extends Component {
                             </>
                         }
                      </View>
-
                     <Button title='Obtener contactos.' onPress={()=>this.getDataFromApi()}/>
                     <Button title='Guardar contactos' onPress={()=>this.storeData()}/>
 
