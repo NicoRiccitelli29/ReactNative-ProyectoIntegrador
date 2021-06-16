@@ -5,10 +5,11 @@ import {
     View,
     ScrollView,
     TouchableOpacity,
+    Button,
     SafeAreaView
     } from 'react-native';
-  
-  import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Tarjeta2 } from '../components/Tarjetas2';  
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../styles/styles';
   
   
@@ -37,49 +38,56 @@ class Screen_importedCards extends Component {
   
   
     render(){
-          const valores = this.state.usuariosImportados.map(item => 
-             <Text key={item.login.uuid}>{item.name.first}{item.name.last}</Text>
-             )
-    return (
-    <SafeAreaView style={{flex:1}}>
-       <View>
-            <View style={styles.headerViewStyle}> 
-              <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
-            </View>
+      
+      return (
+          <SafeAreaView style={{flex:1}}>
             <View>
-                    <Text>¡Estas en la pagina de usuarios guardados!</Text>
-                    <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
-                    <Text onPress={()=>this.props.navigation.navigate('Screen 1')}>Ir a Usuarios importados</Text>
-                    <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros...</Text>
+                  <View style={styles.headerViewStyle}> 
+                    <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
+                  </View>
+                  <View>
+                          <Text>¡Estas en la pagina de Tarjetas importadas!</Text>
+                          <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
+                          <Text onPress={()=>this.props.navigation.navigate('Importar tarjetas')}>Ir a importar tarjetas</Text>
+                          <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros...</Text>
+                  </View>
+                  <View>
+                  <Tarjeta2 info={this.state.usuariosImportados}/>
+                  </View>
+                  <View>
+                  <Button title='Mostrar contactos importados' onPress={()=>this.getData()}/>
+                  </View>
+
+                    
+
+              {/* <View style={{flex:1}}>
+                    
+                    {valores}
+                    <TouchableOpacity onPress={this.getData.bind(this)}>
+                    <View><Text>Mostrar Datos</Text></View>
+                    </TouchableOpacity>
+                  
                 </View>
 
-         {/* <View style={{flex:1}}>
-              
-              {valores}
-              <TouchableOpacity onPress={this.getData.bind(this)}>
-              <View><Text>Mostrar Datos</Text></View>
-              </TouchableOpacity>
-            
-          </View>
-
-          <View style={{flex:7}}>
-            <ScrollView>
-              <View style={{flex:1,
-                      flexDirection:'row',
-                      justifyContent:'space-around',
-                      alignContent:'space-around',
-                      alignItems:'center',
-                      flexWrap:'wrap'
-              }}>
-          
-                        
-          
+                <View style={{flex:7}}>
+                  <ScrollView>
+                    <View style={{flex:1,
+                            flexDirection:'row',
+                            justifyContent:'space-around',
+                            alignContent:'space-around',
+                            alignItems:'center',
+                            flexWrap:'wrap'
+                    }}>
+                
+                              
+                
+                    </View>
+                  </ScrollView>
+                  </View> */}
               </View>
-            </ScrollView>
-            </View> */}
-        </View>
-     </SafeAreaView>
-    );
+              
+          </SafeAreaView>
+      );
   }
   }
 

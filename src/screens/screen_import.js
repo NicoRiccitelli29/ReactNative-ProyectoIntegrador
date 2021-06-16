@@ -39,7 +39,7 @@ class Screen_import extends Component {
         try{
             const jsonUsuarios= JSON.stringify(this.state.usuarios);
             await AsyncStorage.setItem("Usuarios", jsonUsuarios);
-            console.log("Datos guardados");
+            console.log("Datos guardados correctamente");
         
         }catch(error){console.log(error);}
     }
@@ -50,15 +50,16 @@ class Screen_import extends Component {
                 <View>
                     <View style={styles.headerViewStyle}> 
                         <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
-                </View>
-                <View>
-                    <Text>¡Estas en la pagina de obtencion de usuarios!</Text>
-                    <Text onPress={()=>this.props.navigation.navigate('Screen 2')}>Ir a Usuarios guardados</Text>
-                    <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros ...</Text>
-                </View>
+                    </View>
+
+                    <View>
+                        <Text>¡Estas en la pagina de obtencion de usuarios!</Text>
+                        <Text onPress={()=>this.props.navigation.navigate('Tarjetas importadas')}>Ir a tarjetas importadas</Text>
+                        <Text onPress={()=>this.props.navigation.navigate('Nosotros')}>Acerca de nosotros ...</Text>
+                    </View>
+
                     <View>
                         {this.state.activity
-                    
                         ?   <>
                                 <Text>Obteniendo usuarios...</Text>
                                 <ActivityIndicator color="Blue" size='large'/>
@@ -66,11 +67,12 @@ class Screen_import extends Component {
                         :   <>
                                 <Tarjeta2 info={this.state.usuarios}/>
                             </>
-                    
                         }
-                    
-                    </View>
+                     </View>
+
                     <Button title='Obtener contactos.' onPress={()=>this.getDataFromApi()}/>
+                    <Button title='Guardar contactos' onPress={()=>this.storeData()}/>
+
                 </View>
             </SafeAreaView>
 

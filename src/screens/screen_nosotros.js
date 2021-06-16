@@ -19,8 +19,8 @@ import styles from '../styles/styles';
             <View>
                     <Text>¡Estas en la pagina Sobre Nosotros!</Text>
                     <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
-                    <Text onPress={()=>this.props.navigation.navigate('Screen 1')}>Ir a Usuarios importados</Text>
-                    <Text onPress={()=>this.props.navigation.navigate('Screen 2')}>Ir a Usuarios guardados</Text>
+                    <Text onPress={()=>this.props.navigation.navigate('Importar tarjetas')}>Ir a importar tarjetas</Text>
+                    <Text onPress={()=>this.props.navigation.navigate('Tarjetas importadas')}>Ir a tarjetas importadas</Text>
                 </View>
             <View style={styles.nosotrosCard}>
                 <Text>

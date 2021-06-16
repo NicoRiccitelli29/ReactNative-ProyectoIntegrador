@@ -16,6 +16,7 @@ import { Screen_import } from './screens/screen_import';
 import { Screen_Menu } from './screens/screen_menu';
 import { Screen_nosotros } from './screens/screen_nosotros';
 import { Screen_importedCards } from './screens/screen_importedCards';
+import {Screen_papelera} from './screens/screen_papelera';
 
 const Drawer = createDrawerNavigator();
 
@@ -35,10 +36,11 @@ render(){
           activeBackgroundColor:  "lightpink" 
         }}
       >
-        <Drawer.Screen name='Screen 0' component={Screen_Menu} option={{title:"Menu"}}/>
-        <Drawer.Screen name='Screen 1' component={Screen_import} option={{title:"Importar Tarjetas"}}/>
-        <Drawer.Screen name='Screen 2' component={Screen_importedCards} option={{title:"Tarjetas importadas"}}/>
-        <Drawer.Screen name='Screen 3' component={Screen_nosotros} option={{title:"Acerca de nosotros..."}}/>
+        <Drawer.Screen name='Menu' component={Screen_Menu} option={{title:"Menu"}}/>
+        <Drawer.Screen name='Importar tarjetas' component={Screen_import} option={{title:"Importar Tarjetas"}}/>
+        <Drawer.Screen name='Tarjetas importadas' component={Screen_importedCards} option={{title:"Tarjetas importadas"}}/>
+        <Drawer.Screen name='Nosotros' component={Screen_nosotros} option={{title:"Acerca de nosotros..."}}/>
+        <Drawer.Screen name='Papelera' component={Screen_papelera} option={{title:"Papelera"}}/>
       </Drawer.Navigator>
     </NavigationContainer>
   );
