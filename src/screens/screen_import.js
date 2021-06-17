@@ -13,7 +13,9 @@ import{
     Button,
     SafeAreaView,
     TextInput,
+    ImageBackground
 }from 'react-native';
+
 
 
 
@@ -48,13 +50,15 @@ class Screen_import extends Component {
     render(){
         return(
             <SafeAreaView>
+                <ImageBackground style={styles.imageTotal} source={require('../Img/images.jpg')}>
+
                 <View>
                     <View style={styles.headerViewStyle}> 
                         <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
                     </View>
 
                     <View>
-                        <Text>¡Estas en la pagina de obtencion de usuarios!</Text>
+                        <Text style={styles.paginasHeader}>¡Estas en la pagina de obtencion de usuarios!</Text>
                        {/*} <TextInput style={styles.TextoInput} type="number" min="1" onChange={(event) => this.setState({UsuariosAImportar: event.target.value})}   placeholder="Ingrese un número"/>
                        <Text onPress={()=>this.props.navigation.navigate('Tarjetas importadas')}>Ir a tarjetas importadas</Text>
                         <Text onPress={()=>this.props.navigation.navigate('Nosotros')}>Acerca de nosotros ...</Text>{*/}
@@ -74,6 +78,7 @@ class Screen_import extends Component {
                     <Button title='Guardar contactos' onPress={()=>this.storeData()}/>
 
                 </View>
+                </ImageBackground>
             </SafeAreaView>
 
         )

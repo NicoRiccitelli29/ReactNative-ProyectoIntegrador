@@ -6,19 +6,24 @@ import{
 
 const styles = StyleSheet.create({
     headerViewStyle:{
-        backgroundColor: 'blueviolet',  
+        fontWeight:"bold",  
         justifyContent:'center',
         flex:1, 
         flexDirection:"column",
         fontSize:20
     },
     headerTextStyle:{
-        color: 'white'
+        color: 'white',
+        justifyContent:'center',
+        alignItems:'center'
     },
-    nosotrosHeader:{
+    paginasHeader:{
         fontSize:20,
         fontWeight:"500",
-        
+    },
+    imageTotal:{
+        width:'100%',
+        height:'100%'
     },
     nosotrosContenedor :{
         flex:1,
@@ -112,8 +117,8 @@ const styles = StyleSheet.create({
     },
     burguerContainer:{
         position:"absolute",
-        left:10,
-        top:10
+        left:8,
+        top:8
     },
     menuContainer:{
         
@@ -123,6 +128,7 @@ const styles = StyleSheet.create({
     menuTitle :{
         fontSize:30 ,
         backgroundColor: 'cornflowerblue',
+        fontWeight: "bold",
         position: 'absolute',
         top: 300
     },
