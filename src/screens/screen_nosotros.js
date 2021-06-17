@@ -23,6 +23,7 @@ import styles from '../styles/styles';
                     <Text onPress={()=>this.props.navigation.navigate('Tarjetas importadas')}>Ir a tarjetas importadas</Text>
                 </View>
             <View style={styles.nosotrosCard}>
+                <Image source={require('../Img/nico.jpg')}/>
                 <Text>
                     Nicolas Eneo Riccitelli
                 </Text>
