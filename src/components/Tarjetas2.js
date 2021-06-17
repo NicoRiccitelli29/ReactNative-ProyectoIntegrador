@@ -40,11 +40,13 @@ class Tarjeta2 extends Component{
            
                {/*<Image style={styles.imageTarjeta2} source= {require({'item.picture.thumbnail'})}/>*/}
                
-                <Text style={styles.textoTarjeta2}>{item.name.last}, {item.name.first}</Text>
+                <Text style={styles.textoTarjeta2}>Nombre y Apellido: {item.name.last}, {item.name.first}</Text>
                 
-                <Text style={styles.textoTarjeta2}>{item.email}</Text>
+                <Text style={styles.textoTarjeta2}>Email: {item.email}</Text>
                 
-                <Text style={styles.textoTarjeta2}>{item.dob.date} ({item.dob.age})</Text>
+                <Text style={styles.textoTarjeta2}>Fecha de nacimiento:{item.dob.date} ({item.dob.age})</Text>
+
+                <Text style={styles.textoTarjeta2}>Edad: {item.dob.age}</Text>
                
                
             </View>

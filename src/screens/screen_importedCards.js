@@ -6,7 +6,8 @@ import {
     ScrollView,
     TouchableOpacity,
     Button,
-    SafeAreaView
+    SafeAreaView,
+    TextInput
     } from 'react-native';
 import { Tarjeta2 } from '../components/Tarjetas2';  
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -34,7 +35,23 @@ class Screen_importedCards extends Component {
     catch(error){console.log(error)};
   }
    
+  busquedaTarjetas(nombreBuscado){
+    let buscarTarjetas = document.querySelector("#busquedaTarjeta").value.toUpperCase()
+    console.log(buscarTarjetas);
+    let buscar = this.state.items.filter((busqueda)=>{
+       let nombre = busqueda.name.first.toUpperCase()
+       let apellido = busqueda.name.last.toUpperCase()
+       return nombre.startsWith(buscarTarjetas) || apellido.startsWith(buscarTarjetas) 
+       
+    })
+    this.setState({
+        items : buscar
+    }
+    
+    )
+
   
+}
   
   
     render(){
@@ -51,6 +68,11 @@ class Screen_importedCards extends Component {
                           <Text onPress={()=>this.props.navigation.navigate('Importar tarjetas')}>Ir a importar tarjetas</Text>
       <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros...</Text>{*/}
                   </View>
+                  <View class="input-group input-group-sm mb-3">
+                    
+                    <TextInput onChange={this.busquedaTarjetas.bind(this)} id="busquedaTarjeta" placeholder="Filtrar por nombre"  />
+                    {/*<Button  onClick={this.filtrarTarjetas.bind(this)} ></Button>*/}
+                </View>
                   <View>
                   <Tarjeta2 info={this.state.usuariosImportados}/>
                   </View>

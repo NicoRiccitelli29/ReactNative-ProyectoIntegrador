@@ -44,12 +44,12 @@ const styles = StyleSheet.create({
         fontSize: 20
     },
     cardTarjeta2: {
-        backgroundColor: 'grey',
+        backgroundColor: '#ffb6c1',
         borderRadius: 15,
         flexDirection: 'column',
         margin: 5,
-        width: 300,
-        height: 100,
+        width: 400,
+        height: 200,
         padding: 10
     },
     imageTarjeta2: {
