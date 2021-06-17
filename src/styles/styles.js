@@ -9,10 +9,16 @@ const styles = StyleSheet.create({
         backgroundColor: 'blueviolet',  
         justifyContent:'center',
         flex:1, 
-        flexDirection:"column"
+        flexDirection:"column",
+        fontSize:20
     },
     headerTextStyle:{
         color: 'white'
+    },
+    nosotrosHeader:{
+        fontSize:20,
+        fontWeight:"500",
+        
     },
     nosotrosContenedor :{
         flex:1,
@@ -20,13 +26,24 @@ const styles = StyleSheet.create({
         alignItems:"center"
     },
     nosotrosCard:{
-        backgroundColor: "blue",
+        backgroundColor:'#fff5ee',
         borderStyle:"solid",
         borderWidth: 1,
-        borderRadius: 5,
-        width:200,
+        borderRadius: 10,
+        width:300,
         height:200,
-        padding:10
+        padding:10,
+        margin: 5,
+        flexDirection:"column"
+    },
+    nosotrosText:{
+        fontStyle:'italic',
+        fontWeight:'bold'
+    },
+    nosotrosImage:{
+        width:50,
+        height:50,
+    
     },
     headerTarjeta2: {
         flex:1,

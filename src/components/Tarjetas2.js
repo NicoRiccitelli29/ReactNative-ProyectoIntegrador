@@ -4,8 +4,10 @@ import {
   Text,
   View,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  Animated
   } from 'react-native';
+
 import styles from '../styles/styles';
 import { ModalInfo } from './Modal';
 
@@ -16,6 +18,7 @@ class Tarjeta2 extends Component{
         this.state = {
             showModal: false,
             selectedItem: null,
+            toValue:1.2
         }
     }
 
@@ -32,11 +35,22 @@ class Tarjeta2 extends Component{
       this.setState({showModal: !this.state.showModal})
     }
 
+    position = new Animated.Value(1);
+
+    animarTarjeta = () =>{
+        Animated.spring(this.position,{
+            toValue:this.state.toValue,
+            tension: 1000,
+            friction: 1,
+            useNativeDriver:false
+        }).start();
+    }
     renderItem = ({item}) => {
         return (
-          
-            <TouchableOpacity onPress={()=> this.showModal(item)}>
+            <Animated.View>
+            <TouchableOpacity onLongPress={()=> this.showModal(item)} onPress={()=>this.animarTarjeta} >
             <View style={styles.cardTarjeta2}> 
+           
            
                {/*<Image style={styles.imageTarjeta2} source= {require({'item.picture.thumbnail'})}/>*/}
                
@@ -52,7 +66,7 @@ class Tarjeta2 extends Component{
             </View>
             
             </TouchableOpacity>
-             
+            </Animated.View>
          
             
         )
