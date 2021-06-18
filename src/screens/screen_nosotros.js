@@ -48,6 +48,7 @@ import styles from '../styles/styles';
                             <Text>Correo: tbongarra@udesa.edu.ar</Text>
                         </View>
                         <View style={styles.nosotrosCard}>
+                            <Image style={styles.nosotrosImage} source={require('../Img/demi.jpg')}/>
                             <Text  style={styles.nosotrosText}>
                                 Demian Lazarte
                             </Text>
