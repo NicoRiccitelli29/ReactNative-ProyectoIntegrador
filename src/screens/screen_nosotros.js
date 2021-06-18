@@ -51,6 +51,10 @@ import styles from '../styles/styles';
                             <Text  style={styles.nosotrosText}>
                                 Demian Lazarte
                             </Text>
+                            <Text>Universidad de San Andrés</Text>
+                            <Text>Estudios: 3 año Negocios Digitales</Text>
+                            <Text>Edad: 24 años</Text>
+                            <Text>Correo: dlazarte@udesa.edu.ar</Text>
                         </View>
                 </View>
             </ImageBackground>

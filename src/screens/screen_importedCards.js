@@ -21,6 +21,7 @@ class Screen_importedCards extends Component {
       this.state={
           contador: 0,
           usuariosImportados: [],
+         
 
          
           }
@@ -36,6 +37,19 @@ class Screen_importedCards extends Component {
     catch(error){console.log(error)};
   }
    
+  async RemoveData(){
+    try {
+        const jsonUsuariosAEliminar= JSON.stringify(this.state.usuariosImportados);
+        await AsyncStorage.setItem("usuariosEliminados", jsonUsuariosAEliminar);
+        console.log("Datos guardados correctamente");
+        this.setState({usuariosImportados: ""})
+        }
+    catch(error){
+      console.log(error)
+    }
+  }
+
+
   busquedaTarjetas(nombreBuscado){
     let buscarTarjetas = document.querySelector("#busquedaTarjeta").value.toUpperCase()
     console.log(buscarTarjetas);
@@ -58,30 +72,30 @@ class Screen_importedCards extends Component {
     render(){
       
       return (
-          <SafeAreaView style={{flex:1}}>
+          <SafeAreaView>
             <ImageBackground style={styles.imageTotal} source={require('../Img/images.jpg')}>
-              <View>
+              <View style={{flex:1}}>
                   <View style={styles.headerViewStyle}> 
                     <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
                   </View>
-                  <View>
+                <View>
                           <Text style={styles.paginasHeader}>¡Estas en la pagina de Tarjetas importadas!</Text>
                          {/*} <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
                           <Text onPress={()=>this.props.navigation.navigate('Importar tarjetas')}>Ir a importar tarjetas</Text>
       <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros...</Text>{*/}
-                  </View>
-                  <View class="input-group input-group-sm mb-3">
-                    
-                    
+                </View>
+
+                <View class="input-group input-group-sm mb-3">
                     {/*<Button  onClick={this.filtrarTarjetas.bind(this)} ></Button>*/}
                 </View>
-                  <View>
+                
                   <Tarjeta2 info={this.state.usuariosImportados}/>
-                  </View>
-                  <View>
-                  <TextInput onChange={this.busquedaTarjetas.bind(this)} id="busquedaTarjeta" placeholder="Filtrar por nombre"  />
+                  
+                  <Button title='Eliminar contactos importados' onPress={()=>this.RemoveData()}/>
                   <Button title='Mostrar contactos importados' onPress={()=>this.getData()}/>
-                  </View>
+                  
+                
+                 
 
                     
 

@@ -4,6 +4,7 @@ import {
   Text,
   View,
   FlatList,
+  Image,
   TouchableOpacity,
   Animated
   } from 'react-native';
@@ -52,7 +53,7 @@ class Tarjeta2 extends Component{
             <View style={styles.cardTarjeta2}> 
            
            
-               {/*<Image style={styles.imageTarjeta2} source= {require({'item.picture.thumbnail'})}/>*/}
+               <Image style={styles.imageTarjeta2} source= {{uri: item.picture.thumbnail}}></Image>
                
                 <Text style={styles.textoTarjeta2}>Nombre y Apellido: {item.name.last}, {item.name.first}</Text>
                 
@@ -83,6 +84,7 @@ class Tarjeta2 extends Component{
                         keyExtractor={this.keyExtractor}
                         renderItem={this.renderItem}
                         ItemSeparatorComponent={this.separator}
+                        showsVerticalScrollIndicator ={false}
                         />
                         <Text>Presione la tarjeta para ver detalle</Text>
                     </View>

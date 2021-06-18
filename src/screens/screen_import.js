@@ -17,9 +17,6 @@ import{
 }from 'react-native';
 
 
-
-
-
 class Screen_import extends Component {
     constructor(){
         super();
@@ -32,6 +29,7 @@ class Screen_import extends Component {
     componentDidMount(){
       
     }
+
     async getDataFromApi(){
             this.setState({activity: true});
             let usuarios = await getUserData();
@@ -52,7 +50,7 @@ class Screen_import extends Component {
             <SafeAreaView>
                 <ImageBackground style={styles.imageTotal} source={require('../Img/images.jpg')}>
 
-                <View>
+                <View style={{flex:1}}>
                     <View style={styles.headerViewStyle}> 
                         <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
                     </View>
@@ -73,9 +71,10 @@ class Screen_import extends Component {
                                 <Tarjeta2 info={this.state.usuarios}/>
                             </>
                         }
-                     </View>
                     <Button title='Obtener contactos.' onPress={()=>this.getDataFromApi()}/>
                     <Button title='Guardar contactos' onPress={()=>this.storeData()}/>
+                     </View>
+                    
 
                 </View>
                 </ImageBackground>

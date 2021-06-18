@@ -70,13 +70,14 @@ const styles = StyleSheet.create({
         borderRadius: 15,
         flexDirection: 'column',
         margin: 5,
-        width: 400,
-        height: 200,
+        width: 350,
+        height: 250,
         padding: 10
     },
     imageTarjeta2: {
-        width: 50,
-        height: 50
+        width: 60,
+        height: 60,
+        borderRadius: 30
     },
     modalContainer:{
         flex:1,
