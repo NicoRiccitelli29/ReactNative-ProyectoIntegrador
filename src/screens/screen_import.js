@@ -13,7 +13,8 @@ import{
     Button,
     SafeAreaView,
     TextInput,
-    ImageBackground
+    ImageBackground,
+    Alert
 }from 'react-native';
 
 
@@ -36,7 +37,7 @@ class Screen_import extends Component {
             let usuarios = await getUserData(this.state.UsuariosAImportar);
             this.setState({usuarios: usuarios, activity: false});
             Alert.alert("Se importaron "+ UsuariosAImporar + " usuario/s.")
-            console.log(UsuariosAImportar)
+           
             
     }
     async storeData(){
@@ -61,6 +62,7 @@ class Screen_import extends Component {
                     <View>
                         <Text style={styles.paginasHeader}>¡Estas en la pagina de obtencion de usuarios!</Text>
                        <TextInput style={styles.TextoInput}  min="1" onChangeText={ text => this.setState({UsuariosAImportar: text})}   placeholder="Ingrese un número"/>
+                       <Button title='Obtener contactos.' onPress={()=>this.getDataFromApi()}/> 
                        {/*<Text onPress={()=>this.props.navigation.navigate('Tarjetas importadas')}>Ir a tarjetas importadas</Text>
                         <Text onPress={()=>this.props.navigation.navigate('Nosotros')}>Acerca de nosotros ...</Text>{*/}
                     </View>
@@ -75,7 +77,7 @@ class Screen_import extends Component {
                             </>
                         }
                    
-                    <Button title='Obtener contactos.' onPress={()=>this.getDataFromApi()}/>
+                    
                     <Button title='Guardar contactos' onPress={()=>this.storeData()}/>
                      {/*} Alcanza con poner el boton de guardar dentro del componente tarjetas?{*/}
                      </View>

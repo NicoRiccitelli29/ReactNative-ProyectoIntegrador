@@ -39,19 +39,19 @@ class Tarjeta2 extends Component{
     position = new Animated.Value(1);
 
     animarTarjeta = (item) =>{
-        Animated.spring(this.position,{
+        Animated.timing(this.position,{
             toValue:this.state.toValue,
             tension: 1000,
             friction: 1,
-            useNativeDriver:false
+            useNativeDriver:true
         }).start();
         this.showModal(item);
     }
     renderItem = ({item}) => {
         return (
-            <Animated.View>
+            
             <TouchableOpacity onPress={()=>this.animarTarjeta} >
-            <View style={[styles.cardTarjeta2]}> 
+            <Animated.View style={[styles.cardTarjeta2, {transform:[{scale: this.position}]}]}> 
            
            
                <Image style={styles.imageTarjeta2} source= {{uri: item.picture.thumbnail}}></Image>
@@ -65,10 +65,10 @@ class Tarjeta2 extends Component{
                 <Text style={styles.textoTarjeta2}>Edad: {item.dob.age}</Text>
                
                
-            </View>
+            </Animated.View>
             
             </TouchableOpacity>
-            </Animated.View>
+             
          
             
         )
