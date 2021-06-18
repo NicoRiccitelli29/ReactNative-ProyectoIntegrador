@@ -23,6 +23,7 @@ class Screen_import extends Component {
         this.state={
             usuarios:[],
             activity: false,
+            UsuariosAImportar: 0, 
         }
     }
 
@@ -30,10 +31,12 @@ class Screen_import extends Component {
       
     }
 
-    async getDataFromApi(){
+    async getDataFromApi(UsuariosAImportar){
             this.setState({activity: true});
-            let usuarios = await getUserData();
+            let usuarios = await getUserData(this.state.UsuariosAImportar);
             this.setState({usuarios: usuarios, activity: false});
+            Alert.alert("Se importaron "+ UsuariosAImporar + " usuario/s.")
+            console.log(UsuariosAImportar)
             
     }
     async storeData(){
@@ -57,8 +60,8 @@ class Screen_import extends Component {
 
                     <View>
                         <Text style={styles.paginasHeader}>¡Estas en la pagina de obtencion de usuarios!</Text>
-                       {/*} <TextInput style={styles.TextoInput} type="number" min="1" onChange={(event) => this.setState({UsuariosAImportar: event.target.value})}   placeholder="Ingrese un número"/>
-                       <Text onPress={()=>this.props.navigation.navigate('Tarjetas importadas')}>Ir a tarjetas importadas</Text>
+                       <TextInput style={styles.TextoInput}  min="1" onChangeText={ text => this.setState({UsuariosAImportar: text})}   placeholder="Ingrese un número"/>
+                       {/*<Text onPress={()=>this.props.navigation.navigate('Tarjetas importadas')}>Ir a tarjetas importadas</Text>
                         <Text onPress={()=>this.props.navigation.navigate('Nosotros')}>Acerca de nosotros ...</Text>{*/}
                     </View>
                     <View>
@@ -71,8 +74,10 @@ class Screen_import extends Component {
                                 <Tarjeta2 info={this.state.usuarios}/>
                             </>
                         }
+                   
                     <Button title='Obtener contactos.' onPress={()=>this.getDataFromApi()}/>
                     <Button title='Guardar contactos' onPress={()=>this.storeData()}/>
+                     {/*} Alcanza con poner el boton de guardar dentro del componente tarjetas?{*/}
                      </View>
                     
 

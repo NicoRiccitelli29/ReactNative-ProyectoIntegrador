@@ -38,19 +38,20 @@ class Tarjeta2 extends Component{
 
     position = new Animated.Value(1);
 
-    animarTarjeta = () =>{
+    animarTarjeta = (item) =>{
         Animated.spring(this.position,{
             toValue:this.state.toValue,
             tension: 1000,
             friction: 1,
             useNativeDriver:false
         }).start();
+        this.showModal(item);
     }
     renderItem = ({item}) => {
         return (
             <Animated.View>
-            <TouchableOpacity onLongPress={()=> this.showModal(item)} onPress={()=>this.animarTarjeta} >
-            <View style={styles.cardTarjeta2}> 
+            <TouchableOpacity onPress={()=>this.animarTarjeta} >
+            <View style={[styles.cardTarjeta2]}> 
            
            
                <Image style={styles.imageTarjeta2} source= {{uri: item.picture.thumbnail}}></Image>

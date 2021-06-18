@@ -97,32 +97,6 @@ class Screen_importedCards extends Component {
                 
                  
 
-                    
-
-              {/* <View style={{flex:1}}>
-                    
-                    {valores}
-                    <TouchableOpacity onPress={this.getData.bind(this)}>
-                    <View><Text>Mostrar Datos</Text></View>
-                    </TouchableOpacity>
-                  
-                </View>
-
-                <View style={{flex:7}}>
-                  <ScrollView>
-                    <View style={{flex:1,
-                            flexDirection:'row',
-                            justifyContent:'space-around',
-                            alignContent:'space-around',
-                            alignItems:'center',
-                            flexWrap:'wrap'
-                    }}>
-                
-                              
-                
-                    </View>
-                  </ScrollView>
-                  </View> */}
               </View>
             </ImageBackground>  
           </SafeAreaView>
