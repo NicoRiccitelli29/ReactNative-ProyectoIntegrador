@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     },
     menuTitle :{
         fontSize:30 ,
-        backgroundColor: 'cornflowerblue',
+        //backgroundColor: 'cornflowerblue',
         fontWeight: "bold",
         position: 'absolute',
         top: 300
