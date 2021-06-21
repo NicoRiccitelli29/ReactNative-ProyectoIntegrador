@@ -25,6 +25,9 @@ class Screen_import extends Component {
             usuarios:[],
             activity: false,
             UsuariosAImportar: 0, 
+            tarjetasImportadas:[],
+            
+
         }
     }
 
@@ -40,14 +43,42 @@ class Screen_import extends Component {
            
             
     }
-    async storeData(){
+
+    /*} borrarTarjeta(item){
+        let usuarios = this.state.usuariosImportados.filter((usuarios)=>{
+          return usuarios !== item
+              })
+            this.setState({usuariosImportados: usuarios})}{*/
+
+    
+    async storeDataTodos(){
         try{
             const jsonUsuarios= JSON.stringify(this.state.usuarios);
             await AsyncStorage.setItem("Usuarios", jsonUsuarios);
             console.log("Datos guardados correctamente");
         
-        }catch(error){console.log(error);}
-    }
+        }catch(error){console.log(error);}}
+    
+
+    /*}async storeData(item){
+        let usuarios = this.state.usuarios
+        usuarios.push(item)
+        this.setState({tarjetasImportadas: tarjetasImportadas})
+        try{ 
+          const jsonTarjetasImportadas = JSON.stringify(this.state.tarjetasImportadas);
+          await AsyncStorage.setItem("Usuarios", jsonTarjetasImportadas);
+          
+        }
+      catch(e){
+          console.log(e)
+      }
+    
+    }{*/
+
+
+
+
+
 
     render(){
         return(
@@ -61,7 +92,7 @@ class Screen_import extends Component {
 
                     <View>
                         <Text style={styles.paginasHeader}>¡Estas en la pagina de obtencion de usuarios!</Text>
-                       <TextInput style={styles.TextoInput}  min="1" onChangeText={ text => this.setState({UsuariosAImportar: text})}   placeholder="Ingrese un número"/>
+                       <TextInput style={styles.TextoInput}  min="0" onChangeText={ text => this.setState({UsuariosAImportar: text})}   placeholder="Ingrese un número"/>
                        <Button title='Obtener contactos.' onPress={()=>this.getDataFromApi()}/> 
                        {/*<Text onPress={()=>this.props.navigation.navigate('Tarjetas importadas')}>Ir a tarjetas importadas</Text>
                         <Text onPress={()=>this.props.navigation.navigate('Nosotros')}>Acerca de nosotros ...</Text>{*/}
@@ -73,12 +104,12 @@ class Screen_import extends Component {
                                 <ActivityIndicator color="Blue" size='large'/>
                             </>
                         :   <>
-                                <Tarjeta2 info={this.state.usuarios}/>
+                                <Tarjeta2 info={this.state.usuarios} /*}borrar={this.borrarTarjeta.bind(this)} guardar={this.storeData.bind(this)}{*//>
                             </>
                         }
                    
                     
-                    <Button title='Guardar contactos' onPress={()=>this.storeData()}/>
+                    <Button title='Guardar contactos' onPress={()=>this.storeDataTodos()}/>
                      {/*} Alcanza con poner el boton de guardar dentro del componente tarjetas?{*/}
                      </View>
                     

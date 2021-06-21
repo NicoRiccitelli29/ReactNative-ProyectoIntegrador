@@ -26,7 +26,14 @@ class Tarjeta2 extends Component{
     
     keyExtractor = (item,idx) => idx.toString();
     
-   
+    /*} borrarItem(){
+        this.props.borrar(this.props.info.login.uuid)
+    }
+
+    guardarTarjeta(){
+        this.props.guardar(this.props.info.login.uuid)
+    }{*/
+
     showModal(item){
         this.setState({selectedItem:item , showModal:true})
     }
@@ -52,8 +59,17 @@ class Tarjeta2 extends Component{
             
             <TouchableOpacity onPress={()=>this.animarTarjeta(item)} >
             <Animated.View style={[styles.cardTarjeta2, {transform:[{scale: this.position}]}]}> 
-           
-           
+          {/*}  <TouchableOpacity style={ styles.borrar } onPress = { this.borrarItem.bind(this,this.props.info.login.uuid) }>
+            <View >
+                <Text style = { styles.buttonText }>X</Text>
+            </View>
+        </TouchableOpacity> 
+           <TouchableOpacity style={ styles.borrar } onPress = { this.guardarTarjeta.bind(this,this.props.info.login.uuid) }>
+            <View >
+                <Text style = { styles.buttonText }>Guardar</Text>
+            </View>
+        </TouchableOpacity>{*/}
+            
                <Image style={styles.imageTarjeta2} source= {{uri: item.picture.thumbnail}}></Image>
                
                 <Text style={styles.textoTarjeta2}>Nombre y Apellido: {item.name.last}, {item.name.first}</Text>
