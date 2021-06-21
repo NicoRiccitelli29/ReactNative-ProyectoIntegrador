@@ -41,7 +41,7 @@ class Tarjeta2 extends Component{
     animarTarjeta = (item) =>{
         Animated.timing(this.position,{
             toValue:this.state.toValue,
-            tension: 1000,
+            tension: 100,
             friction: 1,
             useNativeDriver:true
         }).start();
@@ -50,7 +50,7 @@ class Tarjeta2 extends Component{
     renderItem = ({item}) => {
         return (
             
-            <TouchableOpacity onPress={()=>this.animarTarjeta} >
+            <TouchableOpacity onPress={()=>this.animarTarjeta(item)} >
             <Animated.View style={[styles.cardTarjeta2, {transform:[{scale: this.position}]}]}> 
            
            
