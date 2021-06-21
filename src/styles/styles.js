@@ -41,6 +41,17 @@ const styles = StyleSheet.create({
         margin: 5,
         flexDirection:"column"
     },
+    nosotrosAnimated:{
+        backgroundColor:'red',
+        borderStyle:"solid",
+        borderWidth: 1,
+        borderRadius: 10,
+        width:300,
+        height:200,
+        padding:10,
+        margin: 5,
+        flexDirection:"column"
+    },
     nosotrosText:{
         fontStyle:'italic',
         fontWeight:'bold'
