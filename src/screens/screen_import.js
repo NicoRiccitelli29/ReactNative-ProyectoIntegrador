@@ -36,7 +36,7 @@ class Screen_import extends Component {
             this.setState({activity: true});
             let usuarios = await getUserData(this.state.UsuariosAImportar);
             this.setState({usuarios: usuarios, activity: false});
-            Alert.alert("Se importaron "+ UsuariosAImporar + " usuario/s.")
+            Alert.alert("Se importaron "+ UsuariosAImportar + " usuario/s.")
            
             
     }
