@@ -32,11 +32,11 @@ class Screen_import extends Component {
       
     }
 
-    async getDataFromApi(UsuariosAImportar){
+    async getDataFromApi(){
             this.setState({activity: true});
             let usuarios = await getUserData(this.state.UsuariosAImportar);
             this.setState({usuarios: usuarios, activity: false});
-            Alert.alert("Se importaron "+ UsuariosAImportar + " usuario/s.")
+            Alert.alert("Se importaron "+ this.state.UsuariosAImportar + " usuario/s.")
            
             
     }
