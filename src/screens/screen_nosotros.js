@@ -45,15 +45,13 @@ import styles from '../styles/styles';
                 <ImageBackground style={styles.imageTotal} source={require('../Img/images.jpg')}>
                 <View style= {styles.nosotrosContenedor}>
                         <View>
+                            <Text style={styles.headerTextStyle}> DNT React Native</Text>
                             <Text style={styles.paginasHeader}>¡Estas en la pagina Acerca de Nosotros!</Text>
                     
                         </View>
                         
                         
-                        <Animated.View style={styles.nosotrosCard, 
-                                             {backfaceVisibility:'false', 
-                                             //transform:[{translateY: this.position}, {rotateX: rotA}]
-                                            }}>
+                        <View style={styles.nosotrosCard}>
                             <Image style={styles.nosotrosImage} source={require('../Img/nico.jpg')}/>
                                 <Text style={styles.nosotrosText}>
                                     Nicolas Eneo Riccitelli
@@ -62,16 +60,10 @@ import styles from '../styles/styles';
                                 <Text>Estudios: 3 año Negocios Digitales</Text>
                                 <Text>Edad: 20 años</Text>
                                 <Text>Correo: nriccitelli@udesa.edu.ar</Text>
-                            {/*<TouchableOpacity onPress={this.rotacionTarjeta}></TouchableOpacity>*/}
-                        </Animated.View>
+                            
+                        </View>
 
-                        {/*<Animated.View style={styles.nosotrosAnimated, 
-                                             {backfaceVisibility:'true', 
-                                             transform:[{translateY: this.position}, {rotateX: rotB}]}}>
-                            <TouchableOpacity onPress={this.rotacionTarjeta}>
-                                <Text>HOLA</Text>
-                            </TouchableOpacity>
-                        </Animated.View>*/}
+                       
                         
                         
 

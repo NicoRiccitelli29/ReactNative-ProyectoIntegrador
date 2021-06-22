@@ -23,7 +23,7 @@ import styles from '../styles/styles';
                 <ImageBackground style={styles.imageTotal} source={require('../Img/images.jpg')}>
                     <View style={styles.menuContainer}>
                         <Text style={styles.menuTitle}>Bienvenido a la Aplicacion</Text>
-                        <Text style={styles.menuText}> DNT React Native</Text>
+                        <Text style={styles.headerTextStyle}> DNT React Native</Text>
                         <Text style={styles.paginasHeader}>¡Estas en el menu!</Text>
                         <Text style={{justifyContent:'center', alignItems:'center'}}>Presiona el boton para navegar</Text>
                     </View>

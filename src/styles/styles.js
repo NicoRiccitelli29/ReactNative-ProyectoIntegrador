@@ -15,7 +15,9 @@ const styles = StyleSheet.create({
     headerTextStyle:{
         color: 'white',
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        fontSize:20,
+        
     },
     paginasHeader:{
         fontSize:20,
@@ -157,6 +159,11 @@ const styles = StyleSheet.create({
         height:20,
         margin:12,
         borderWidth:1,
+    },
+    buttonText:{
+        position: 'absolute',
+        top: 5,
+        right:5
     }
 })
 

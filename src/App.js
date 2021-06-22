@@ -32,6 +32,8 @@ render(){
         initialRouteName="Menu"
         drawerStyle={{
           width:250,
+        }}
+        drawerContentOptions ={{
           activeTintColor: "white",
           activeBackgroundColor:  "lightpink" 
         }}
