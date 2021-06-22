@@ -25,9 +25,11 @@ class Tarjeta2 extends Component{
 
     
     keyExtractor = (item,idx) => idx.toString();
+
+    /*} 
     
-    /*} borrarItem(){
-        this.props.borrar(this.props.info.login.uuid)
+    borrarItem(item){
+        this.props.borrar(item)
     }
 
     guardarTarjeta(){
@@ -41,6 +43,12 @@ class Tarjeta2 extends Component{
 
     onClose(){
       this.setState({showModal: !this.state.showModal})
+      Animated.timing(this.position,{
+        toValue:1,
+        tension: 100,
+        friction: 1,
+        useNativeDriver:true
+    }).start();
     }
 
     position = new Animated.Value(1);
@@ -59,16 +67,19 @@ class Tarjeta2 extends Component{
             
             <TouchableOpacity onPress={()=>this.animarTarjeta(item)} >
             <Animated.View style={[styles.cardTarjeta2, {transform:[{scale: this.position}]}]}> 
-          {/*}  <TouchableOpacity style={ styles.borrar } onPress = { this.borrarItem.bind(this,this.props.info.login.uuid) }>
+           <TouchableOpacity style={ styles.borrar } onPress = { () => this.props.borrarTarjeta(item.login.uuid) }>
             <View >
                 <Text style = { styles.buttonText }>X</Text>
             </View>
         </TouchableOpacity> 
+        {/*} 
            <TouchableOpacity style={ styles.borrar } onPress = { this.guardarTarjeta.bind(this,this.props.info.login.uuid) }>
             <View >
                 <Text style = { styles.buttonText }>Guardar</Text>
             </View>
         </TouchableOpacity>{*/}
+
+            
             
                <Image style={styles.imageTarjeta2} source= {{uri: item.picture.thumbnail}}></Image>
                
