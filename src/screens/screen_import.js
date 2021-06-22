@@ -60,7 +60,7 @@ class Screen_import extends Component {
         }catch(error){console.log(error);}}
     
 
-    /*}async storeData(item){
+    async storeData(item){
         let usuarios = this.state.usuarios
         usuarios.push(item)
         this.setState({tarjetasImportadas: tarjetasImportadas})
@@ -73,7 +73,7 @@ class Screen_import extends Component {
           console.log(e)
       }
     
-    }{*/
+    }
 
 
 
@@ -104,7 +104,7 @@ class Screen_import extends Component {
                                 <ActivityIndicator color="Blue" size='large'/>
                             </>
                         :   <>
-                                <Tarjeta2 info={this.state.usuarios} /*}borrar={this.borrarTarjeta.bind(this)} guardar={this.storeData.bind(this)}{*//>
+                                <Tarjeta2 info={this.state.usuarios} /*}borrar={this.borrarTarjeta.bind(this)}{*/ guardar={this.storeData.bind(this)}/>
                             </>
                         }
                    
