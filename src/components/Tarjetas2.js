@@ -75,7 +75,7 @@ class Tarjeta2 extends Component{
         
            <TouchableOpacity style={ styles.borrar } onPress = { this.guardarTarjeta.bind(item.login.uuid)}>
             <View>
-                <Text style = { styles.buttonText }>Guardar</Text>
+                <Text style = { styles.buttonGuardar }>Guardar</Text>
             </View>
         </TouchableOpacity>
 

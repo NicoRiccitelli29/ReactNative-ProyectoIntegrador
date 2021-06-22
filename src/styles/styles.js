@@ -164,6 +164,11 @@ const styles = StyleSheet.create({
         position: 'absolute',
         top: 5,
         right:5
+    },
+    buttonGuardar :{
+        position: 'absolute',
+        bottom:5,
+        right:5
     }
 })
 
