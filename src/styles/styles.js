@@ -120,6 +120,9 @@ const styles = StyleSheet.create({
         fontSize:20,
         color:"white",
     },
+    borrar:{
+        padding: 10
+    },
     burguerButton:{
         width:60,
         height:60,

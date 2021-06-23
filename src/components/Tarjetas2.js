@@ -66,23 +66,24 @@ class Tarjeta2 extends Component{
         return (
             
             <TouchableOpacity onPress={()=>this.animarTarjeta(item)} >
-            <Animated.View style={[styles.cardTarjeta2, {transform:[{scale: this.position}]}]}> 
-           <TouchableOpacity style={ styles.borrar } onPress = { () => this.props.borrarTarjeta(item.login.uuid) }>
-            <View >
-                <Text style = { styles.buttonText }>X</Text>
-            </View>
-        </TouchableOpacity> 
-        
-          {/*} <TouchableOpacity style={ styles.borrar } onPress = { this.guardarTarjeta.bind(item.login.uuid)}>
-            <View>
-                <Text style = { styles.buttonGuardar }>Guardar</Text>
-            </View>
-        </TouchableOpacity> */}
+                <Animated.View style={[styles.cardTarjeta2, {transform:[{scale: this.position}]}]}> 
 
-            
-            
-               <Image style={styles.imageTarjeta2} source= {{uri: item.picture.thumbnail}}></Image>
-               
+                <TouchableOpacity style={ styles.borrar } onPress = { () => this.props.borrarTarjeta(item.login.uuid) }>
+                    <View>
+                    <Text style = { styles.buttonText }>X</Text>
+                    </View>
+                </TouchableOpacity> 
+                
+                {/*} <TouchableOpacity style={ styles.borrar } onPress = { this.guardarTarjeta.bind(item.login.uuid)}>
+                    <View>
+                        <Text style = { styles.buttonGuardar }>Guardar</Text>
+                    </View>
+                </TouchableOpacity> */}
+
+                    
+                    
+                <Image style={styles.imageTarjeta2} source= {{uri: item.picture.thumbnail}}></Image>
+                
                 <Text style={styles.textoTarjeta2}>Nombre y Apellido: {item.name.last}, {item.name.first}</Text>
                 
                 <Text style={styles.textoTarjeta2}>Email: {item.email}</Text>
@@ -92,8 +93,7 @@ class Tarjeta2 extends Component{
                 <Text style={styles.textoTarjeta2}>Edad: {item.dob.age}</Text>
                
                
-            </Animated.View>
-            
+                </Animated.View>
             </TouchableOpacity>
              
          

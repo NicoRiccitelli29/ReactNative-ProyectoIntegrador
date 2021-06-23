@@ -5,7 +5,8 @@ import {
 	Text,
     Button,
     SafeAreaView,
-    ImageBackground
+    ImageBackground,
+    Alert
 } from 'react-native';
 import { Tarjeta2 } from '../components/Tarjetas2';
 import { DrawerNavigator } from '../components/DrawerNavigator'
@@ -20,14 +21,28 @@ class Screen_papelera extends Component {
         }
     }
 
-async usuariosEliminados(){
-    try{
-        const eliminados = await AsyncStorage.getItem("usuariosEliminados");
-        this.setState({usuariosEliminados: JSON.parse(eliminados)});
-    } catch(error){
-        console.log(error)
+
+    borrarTarjeta(uuid){
+        Alert.alert('Esta acción no se puede deshacer', 'Está seguro que quiere eliminar esta tarjeta?', [
+            {text: 'OK', onPress:()=> {
+                let usuarios = this.state.usuariosEliminados.filter((usuarios)=>{
+                    return usuarios.login.uuid !== uuid
+                        })
+                      this.setState({usuariosEliminados: usuarios})
+                } 
+            }
+        ])
+        
     }
-}
+
+    async usuariosEliminados(){
+        try{
+            const eliminados = await AsyncStorage.getItem("usuariosEliminados");
+            this.setState({usuariosEliminados: JSON.parse(eliminados)});
+        } catch(error){
+            console.log(error)
+        }
+    }   
 
 	render () {
 		return (
@@ -42,7 +57,7 @@ async usuariosEliminados(){
                         </View>
                         <DrawerNavigator navigator={this.props.navigation}/>
                         <View>
-                            <Tarjeta2 info={this.state.usuariosEliminados}/>
+                            <Tarjeta2 info={this.state.usuariosEliminados} borrarTarjeta={this.borrarTarjeta.bind(this)}/>
                             <Button title='Mostrar contactos eliminados' onPress={()=>this.usuariosEliminados()}/>
                         </View>
                     </View>
