@@ -10,7 +10,8 @@ import {
     TextInput,
     ImageBackground
     } from 'react-native';
-import { Tarjeta2 } from '../components/Tarjetas2';  
+import { Tarjeta2 } from '../components/Tarjetas2';
+import {DrawerNavigator} from '../components/DrawerNavigator'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../styles/styles';
   
@@ -85,11 +86,15 @@ class Screen_importedCards extends Component {
           <SafeAreaView>
             <ImageBackground style={styles.imageTotal} source={require('../Img/images.jpg')}>
               <View style={{flex:1}}>
+                <View style={styles.menuContainer}>
                   <View style={styles.headerViewStyle}> 
                     <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
                   </View>
-                <View>
-                          <Text style={styles.paginasHeader}>Mis contactos</Text>
+                </View>
+              <View>
+
+              <DrawerNavigator navigator={this.props.navigation}/>
+              <Text style={styles.paginasHeader}>Mis contactos</Text>
                          {/*} <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
                           <Text onPress={()=>this.props.navigation.navigate('Importar tarjetas')}>Ir a importar tarjetas</Text>
       <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros...</Text>{*/}

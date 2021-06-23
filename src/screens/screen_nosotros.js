@@ -10,6 +10,7 @@ import {
   TouchableOpacity
   } from 'react-native';
 import Animated from 'react-native-reanimated';
+import { DrawerNavigator } from '../components/DrawerNavigator'
 import styles from '../styles/styles';
 
   class Screen_nosotros extends Component {
@@ -47,6 +48,7 @@ import styles from '../styles/styles';
                         <View>
                             <Text style={styles.headerTextStyle}> DNT React Native</Text>
                             <Text style={styles.paginasHeader}>¡Estas en la pagina Acerca de Nosotros!</Text>
+                            <DrawerNavigator navigator={this.props.navigation}/>
                     
                         </View>
                         

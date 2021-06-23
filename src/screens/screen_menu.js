@@ -10,6 +10,7 @@ import {
   SafeAreaView
   } from 'react-native';
 import styles from '../styles/styles';
+import {DrawerNavigator} from '../components/DrawerNavigator'
 
   class Screen_Menu extends Component {
         constructor(){
@@ -27,13 +28,8 @@ import styles from '../styles/styles';
                         <Text style={styles.paginasHeader}>¡Estas en el menu!</Text>
                         <Text style={{justifyContent:'center', alignItems:'center'}}>Presiona el boton para navegar</Text>
                     </View>
-                    <View style={styles.burguerContainer}> 
-                        <TouchableOpacity onPress={()=> this.props.navigation.openDrawer()}> 
-                            <View style={styles.burguerButton}>
-                                <Image style={styles.imagenMenu} source={require('../Img/menu.png')}/>
-                            </View>    
-                        </TouchableOpacity>
-                    </View>
+                    
+                    <DrawerNavigator navigator={this.props.navigation}/>
                 </ImageBackground>
             </SafeAreaView>
         )

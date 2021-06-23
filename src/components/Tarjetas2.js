@@ -73,11 +73,11 @@ class Tarjeta2 extends Component{
             </View>
         </TouchableOpacity> 
         
-           <TouchableOpacity style={ styles.borrar } onPress = { this.guardarTarjeta.bind(item.login.uuid)}>
+          {/*} <TouchableOpacity style={ styles.borrar } onPress = { this.guardarTarjeta.bind(item.login.uuid)}>
             <View>
                 <Text style = { styles.buttonGuardar }>Guardar</Text>
             </View>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
             
             

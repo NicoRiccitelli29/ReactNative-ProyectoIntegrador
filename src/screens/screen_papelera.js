@@ -8,6 +8,7 @@ import {
     ImageBackground
 } from 'react-native';
 import { Tarjeta2 } from '../components/Tarjetas2';
+import { DrawerNavigator } from '../components/DrawerNavigator'
 import styles from '../styles/styles';
 
 
@@ -39,6 +40,7 @@ async usuariosEliminados(){
                         <View>
                             <Text style={styles.paginasHeader}>¡Estas en la papelera!</Text>
                         </View>
+                        <DrawerNavigator navigator={this.props.navigation}/>
                         <View>
                             <Tarjeta2 info={this.state.usuariosEliminados}/>
                             <Button title='Mostrar contactos eliminados' onPress={()=>this.usuariosEliminados()}/>

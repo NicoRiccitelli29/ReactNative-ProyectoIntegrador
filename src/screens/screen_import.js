@@ -4,6 +4,7 @@ import { getUserData } from '../api/RandomUsers';
 import { Tarjeta2 } from '../components/Tarjetas2';
 import styles from '../styles/styles';
 import { ModalInfo } from '../components/Modal';
+import { DrawerNavigator } from '../components/DrawerNavigator'
 import{
     View,
     Text,
@@ -44,11 +45,13 @@ class Screen_import extends Component {
             
     }
 
-    /*} borrarTarjeta(item){
-        let usuarios = this.state.usuariosImportados.filter((usuarios)=>{
-          return usuarios !== item
+    borrarTarjeta(uuid){
+        let usuarios = this.state.usuarios.filter((usuarios)=>{
+          return usuarios.login.uuid !== uuid
               })
-            this.setState({usuariosImportados: usuarios})}{*/
+            this.setState({usuarios: usuarios})
+  }
+  
 
     
     async storeDataTodos(){
@@ -75,6 +78,7 @@ class Screen_import extends Component {
     
     }
 
+    
 
 
 
@@ -86,6 +90,7 @@ class Screen_import extends Component {
                 <ImageBackground style={styles.imageTotal} source={require('../Img/images.jpg')}>
 
                 <View style={{flex:1}}>
+                    <DrawerNavigator navigator={this.props.navigation}/>
                     <View style={styles.headerViewStyle}> 
                         <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
                     </View>
@@ -104,7 +109,7 @@ class Screen_import extends Component {
                                 <ActivityIndicator color="Blue" size='large'/>
                             </>
                         :   <>
-                                <Tarjeta2 info={this.state.usuarios} /*}borrar={this.borrarTarjeta.bind(this)}{*/ guardar={this.storeData.bind(this)}/>
+                                <Tarjeta2 info={this.state.usuarios} borrarTarjeta={this.borrarTarjeta.bind(this)} guardar={this.storeData.bind(this)}/>
                             </>
                         }
                    
