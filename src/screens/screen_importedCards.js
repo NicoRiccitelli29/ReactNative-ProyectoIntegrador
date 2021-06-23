@@ -12,6 +12,7 @@ import {
     } from 'react-native';
 import { Tarjeta2 } from '../components/Tarjetas2';
 import {DrawerNavigator} from '../components/DrawerNavigator'
+import { SimpleLineIcons } from '@expo/vector-icons'; 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import styles from '../styles/styles';
   
@@ -86,28 +87,29 @@ class Screen_importedCards extends Component {
           <SafeAreaView>
             <ImageBackground style={styles.imageTotal} source={require('../Img/images.jpg')}>
               <View style={{flex:1}}>
-                <View style={styles.menuContainer}>
-                  <View style={styles.headerViewStyle}> 
+                  <View style={styles.header}> 
+                    <DrawerNavigator navigator={this.props.navigation}/>
                     <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
-                  </View>
-                </View>
-              <View>
+                    <SimpleLineIcons name="options" size={20} style={styles.optionContainer}/>
+              </View>
+                
+              <View style={styles.mainContainer}>
 
-              <DrawerNavigator navigator={this.props.navigation}/>
-              <Text style={styles.paginasHeader}>Mis contactos</Text>
+              
+                <Text>Mis contactos</Text>
                          {/*} <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
                           <Text onPress={()=>this.props.navigation.navigate('Importar tarjetas')}>Ir a importar tarjetas</Text>
       <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros...</Text>{*/}
-                </View>
-
-                <View class="input-group input-group-sm mb-3">
-                    {/*<Button  onClick={this.filtrarTarjetas.bind(this)} ></Button>*/}
-                </View>
                 
-                  <Tarjeta2 info={this.state.usuariosImportados} borrarTarjeta={this.borrarTarjeta.bind(this)}/>
-                  
-                  <Button title='Eliminar contactos importados' onPress={()=>this.RemoveData()}/>
-                  <Button title='Mostrar contactos importados' onPress={()=>this.getData()}/>
+                
+                <Tarjeta2 info={this.state.usuariosImportados} borrarTarjeta={this.borrarTarjeta.bind(this)}/>
+                
+              </View>
+
+              <View>
+                <Button title='Eliminar contactos importados' onPress={()=>this.RemoveData()}/>
+                <Button title='Mostrar contactos importados' onPress={()=>this.getData()}/>
+              </View>
                   
                 
                  

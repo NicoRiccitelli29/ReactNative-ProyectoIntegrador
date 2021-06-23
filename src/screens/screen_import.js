@@ -5,6 +5,7 @@ import { Tarjeta2 } from '../components/Tarjetas2';
 import { ModalInfo } from '../components/Modal';
 import { DrawerNavigator } from '../components/DrawerNavigator'
 import { MaterialIcons } from '@expo/vector-icons'
+
 import{
     View,
     Text,
@@ -42,10 +43,10 @@ class Screen_import extends Component {
     }
 
     borrarTarjeta(uuid){
-        let usuarios = this.state.usuariosImportados.filter((usuarios)=>{
+        let usuarios = this.state.usuarios.filter((usuarios)=>{
           return usuarios.login.uuid !== uuid
               })
-            this.setState({usuariosImportados: usuarios})
+            this.setState({usuarios: usuarios})
     }
 
     
@@ -83,17 +84,15 @@ class Screen_import extends Component {
 
                 <View style={{flex:1}}>
 
-                    <DrawerNavigator navigator={this.props.navigation}/>
-
-                    <View style={styles.headerViewStyle}> 
+                    <View style={styles.header}> 
+                        <DrawerNavigator navigator={this.props.navigation}/>
                         <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
-                    </View>
-
-                    <View>
-                        <Text style={styles.paginasHeader}>¡Estas en la pagina de obtencion de usuarios!</Text>
-
-                        <Modal visible={this.state.modalGetData}>
-                            <View>
+                        <Modal 
+                            visible={this.state.modalGetData}
+                            transparent={true}
+                        >
+                            <View style={styles.modalContainer}>
+                            <View style={styles.modalGetData}>
                                 <TextInput style={styles.TextoInput}  min="0" onChangeText={ text => this.setState({UsuariosAImportar: text})}   placeholder="Ingrese un número"/>
                                 <Button 
                                     title='Obtener contactos.' 
@@ -102,20 +101,19 @@ class Screen_import extends Component {
                                     }
                                 /> 
                             </View>
+                            </View>   
                         </Modal>
 
                         <MaterialIcons 
                             name='add'
-                            size={24}
+                            size={30}
                             onPress={()=>this.setState({modalGetData: true})}
+                            style={styles.addContainer}
                         />
-
-                        
-
-                        
                     </View>
 
-                    <View>
+                    <View style={styles.mainContainer}>
+                        <Text>¡Estas en la pagina de obtencion de usuarios!</Text>
 
                         {this.state.activity
                         ?   <>
@@ -126,7 +124,10 @@ class Screen_import extends Component {
                                 <Tarjeta2 info={this.state.usuarios} borrarTarjeta={this.borrarTarjeta.bind(this)} guardar={this.storeData.bind(this)}/>
                             </>
                         }
-                   
+                        
+                    </View>
+
+                    <View style={{flex:1}}>
                     
                     <Button title='Guardar contactos' onPress={()=>this.storeDataTodos()}/>
                      {/*} Alcanza con poner el boton de guardar dentro del componente tarjetas?{*/}

@@ -3,21 +3,38 @@ import{
     View,
     StyleSheet
 } from 'react-native'
+import { withSafeAreaInsets } from 'react-native-safe-area-context'
 
 const styles = StyleSheet.create({
-    headerViewStyle:{
+    header:{
         fontWeight:"bold",  
-        justifyContent:'center',
+        justifyContent:'space-between',
+        alignItems: 'center',
         flex:1, 
-        flexDirection:"column",
+        flexDirection:"row",
         fontSize:20
     },
     headerTextStyle:{
         color: 'white',
         justifyContent:'center',
-        alignItems:'center',
-        fontSize:20,
+        alignSelf:'center',
+        fontSize:17,
         
+    },
+    addContainer:{
+        marginRight: 18
+    },
+    trashContainer:{
+        marginRight: 21
+    },
+    optionContainer:{
+        marginRight: 17
+    },
+    mainContainer:{
+        flex:10,
+        backgroundColor: 'white',
+        justifyContent: 'center',
+        alignItems:'center'
     },
     paginasHeader:{
         fontSize:20,
@@ -38,7 +55,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 10,
         width:300,
-        height:200,
+        height:150,
         padding:10,
         margin: 5,
         flexDirection:"column"
@@ -93,9 +110,19 @@ const styles = StyleSheet.create({
         borderRadius: 30
     },
     modalContainer:{
-        flex:1,
-        justifyContent:"flex-end",
+        flex: 1,
+        justifyContent:"center",
         alignItems:"center"
+    },
+    modalGetData:{
+        padding: 20,
+        backgroundColor: 'white',
+        justifyContent:"center",
+        alignSelf:"center",
+        borderRadius:10,
+        borderWidth:1,
+        borderStyle:"solid",
+        borderColor:"black"
     },
     modal:{
         height: '70%',
@@ -133,12 +160,12 @@ const styles = StyleSheet.create({
         position:'absolute',
     },
     burguerContainer:{
-        position:"absolute",
-        left:8,
-        top:8
+        
+        left:1,
+        top:1
     },
     menuContainer:{
-        
+        margin: 10,
         alignItems: 'center',
         justifyContent: 'center',
     },
@@ -147,7 +174,7 @@ const styles = StyleSheet.create({
         //backgroundColor: 'cornflowerblue',
         fontWeight: "bold",
         position: 'absolute',
-        top: 300
+        top: 200
     },
     imagenMenu:{
         width:60,
@@ -162,6 +189,7 @@ const styles = StyleSheet.create({
         height:20,
         margin:12,
         borderWidth:1,
+        
     },
     buttonText:{
         position: 'absolute',

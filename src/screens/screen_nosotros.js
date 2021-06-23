@@ -44,15 +44,14 @@ import styles from '../styles/styles';
         return(
            <SafeAreaView>
                 <ImageBackground style={styles.imageTotal} source={require('../Img/images.jpg')}>
-                <View style= {styles.nosotrosContenedor}>
-                        <View>
-                            <Text style={styles.headerTextStyle}> DNT React Native</Text>
-                            <Text style={styles.paginasHeader}>¡Estas en la pagina Acerca de Nosotros!</Text>
-                            <DrawerNavigator navigator={this.props.navigation}/>
-                    
-                        </View>
+                <View style={{flex:1}}>
+                    <View style={styles.header}> 
+                      <DrawerNavigator navigator={this.props.navigation}/>
+                      <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
+                      <View style={{marginRight: 45}}></View>
+                    </View>
                         
-                        
+                    <View style={styles.mainContainer}>   
                         <View style={styles.nosotrosCard}>
                             <Image style={styles.nosotrosImage} source={require('../Img/nico.jpg')}/>
                                 <Text style={styles.nosotrosText}>
@@ -64,6 +63,7 @@ import styles from '../styles/styles';
                                 <Text>Correo: nriccitelli@udesa.edu.ar</Text>
                             
                         </View>
+                      
 
                        
                         
@@ -93,6 +93,7 @@ import styles from '../styles/styles';
                             <Text>Edad: 24 años</Text>
                             <Text>Correo: dlazarte@udesa.edu.ar</Text>
                         </View>
+                      </View> 
                 </View>
             </ImageBackground>
         </SafeAreaView> 
