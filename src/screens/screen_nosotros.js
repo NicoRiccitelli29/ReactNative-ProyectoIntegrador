@@ -48,11 +48,14 @@ import styles from '../styles/styles';
                     <View style={styles.header}> 
                       <DrawerNavigator navigator={this.props.navigation}/>
                       <Text style={styles.headerTextStyle}>DNT APP React Native</Text>
+                      
                       <View style={{marginRight: 45}}></View>
                     </View>
                         
                     <View style={styles.mainContainer}>   
+                    <Text style={styles.paginasHeader}>¡Acerca de Nosotros!</Text>
                         <View style={styles.nosotrosCard}>
+                            
                             <Image style={styles.nosotrosImage} source={require('../Img/nico.jpg')}/>
                                 <Text style={styles.nosotrosText}>
                                     Nicolas Eneo Riccitelli

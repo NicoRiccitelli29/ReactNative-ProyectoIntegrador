@@ -38,11 +38,11 @@ render(){
           activeBackgroundColor:  "lightpink" 
         }}
       >
-        <Drawer.Screen name='Menu' component={Screen_Menu} option={{title:"Menu"}}/>
-        <Drawer.Screen name='Importar tarjetas' component={Screen_import} option={{title:"Importar Tarjetas"}}/>
-        <Drawer.Screen name='Tarjetas importadas' component={Screen_importedCards} option={{title:"Tarjetas importadas"}}/>
-        <Drawer.Screen name='Nosotros' component={Screen_nosotros} option={{title:"Acerca de nosotros..."}}/>
-        <Drawer.Screen name='Papelera' component={Screen_papelera} option={{title:"Papelera"}}/>
+        <Drawer.Screen name='Menu' component={Screen_Menu}/>
+        <Drawer.Screen name='Importar tarjetas' component={Screen_import}/>
+        <Drawer.Screen name='Tarjetas importadas' component={Screen_importedCards} />
+        <Drawer.Screen name='Nosotros' component={Screen_nosotros} />
+        <Drawer.Screen name='Papelera' component={Screen_papelera} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
