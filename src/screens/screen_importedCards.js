@@ -23,7 +23,7 @@ class Screen_importedCards extends Component {
       this.state={
           contador: 0,
           usuariosImportados: [],
-          UsuariosATraer:[], 
+          UsuariosATraer:'', 
 
          
           }
@@ -62,21 +62,23 @@ class Screen_importedCards extends Component {
 
 
 
-  busquedaTarjetas(item){
-    let buscarTarjetas = this.state.UsuariosATraer.toUpperCase()
-    console.log(buscarTarjetas);
-    let buscar = this.state.UsuariosATraer.filter((busqueda)=>{
+  busquedaTarjetas(text){
+    let buscarTarjetas = text.toUpperCase()
+   console.log(buscarTarjetas)
+    let buscar = this.state.usuariosImportados.filter((busqueda)=>{
        let nombre = busqueda.name.first.toUpperCase()
        let apellido = busqueda.name.last.toUpperCase()
-       return nombre.startsWith(buscarTarjetas) || apellido.startsWith(buscarTarjetas) 
+       let ciudad = busqueda.location.city.toUpperCase()
+       let pais = busqueda.location.country.toUpperCase()
+       return nombre.startsWith(buscarTarjetas) || apellido.startsWith(buscarTarjetas) || ciudad.startsWith(buscarTarjetas) || pais.startsWith(buscarTarjetas)
        
     })
     this.setState({
-        UsuariosATraer : buscar
+        usuariosImportados : buscar
     }
     
     )
-
+   
   
 }
   
@@ -99,7 +101,7 @@ class Screen_importedCards extends Component {
                 <Text>Mis contactos</Text>
                          
                 <View>
-                  <TextInput style={styles.TextoInput}   onChangeText={ text => this.setState({UsuariosATraer: text})}   placeholder="Busca por un filtro"> </TextInput>
+                  <TextInput style={styles.TextoInput}   onChangeText={ text => this.busquedaTarjetas(text)}   placeholder="Busca por un filtro"> </TextInput>
                   <Button title="Buscar contactos" onChangeText={()=>this.busquedaTarjetas()}>Buscar</Button>
                 </View>
                 

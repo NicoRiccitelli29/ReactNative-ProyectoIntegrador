@@ -74,7 +74,7 @@ class Screen_import extends Component {
         catch(e){
           console.log(e)
         }
-    }*/
+    } */
 
 
     render(){

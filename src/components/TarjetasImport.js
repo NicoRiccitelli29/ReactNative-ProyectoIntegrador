@@ -28,7 +28,7 @@ class TarjetasImport extends Component{
     
     keyExtractor = (item,idx) => idx.toString();
 
-    async guardarTarjetas(){
+   async guardarTarjetas(){
         try{
             let guardar = await AsyncStorage.getItem('Usuarios');
             guardar= JSON.parse(guardar);
@@ -39,8 +39,8 @@ class TarjetasImport extends Component{
             await AsyncStorage.setItem('Usuarios', usuarioGuardar)
         } catch (error){
             console.log(error)
-        }
-    }
+        }        
+    } 
 
     
 
@@ -77,7 +77,7 @@ class TarjetasImport extends Component{
                 <Animated.View style={[styles.cardTarjeta2, {transform:[{scale: this.position}]}]}> 
 
                 
-                <TouchableOpacity  onPress = { ()=> this.guardarTarjetas.bind(this)}>
+                <TouchableOpacity  onPress = { ()=> this.guardarTarjetas()}>
                     <View>
                         <Text style = { styles.buttonGuardar }>Guardar</Text>
                     </View>

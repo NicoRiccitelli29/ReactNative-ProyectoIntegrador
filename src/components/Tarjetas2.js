@@ -70,11 +70,7 @@ class Tarjeta2 extends Component{
                     </View>
                 </TouchableOpacity> 
                 
-                <TouchableOpacity  onPress = { ()=> this.props.guardar(item)}>
-                    <View>
-                        <Text style = { styles.buttonGuardar }>Guardar</Text>
-                    </View>
-                </TouchableOpacity>
+               
 
                     
                     
