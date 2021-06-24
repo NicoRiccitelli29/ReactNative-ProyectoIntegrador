@@ -198,9 +198,13 @@ const styles = StyleSheet.create({
     },
     buttonGuardar :{
         position: 'absolute',
-        bottom:5,
-        right:5
-    }
+        top : 5,
+        right:5,
+        borderRadius: 5, 
+        borderWidth:1,
+        fontWeight:'bold'
+    },
+
 })
 
 export default styles
