@@ -9,7 +9,7 @@ export class DrawerNavigator extends Component {
     render() {
         return(
             <View style={styles.menuContainer}> 
-                <Entypo 
+                <Entypo //Es un componente de expo que trae iconos
                     name="menu"
                     size={30}
                     color="black"

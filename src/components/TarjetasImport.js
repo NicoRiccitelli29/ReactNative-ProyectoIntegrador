@@ -1,3 +1,4 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {Component} from 'react';
 import { 
   StyleSheet, 
@@ -13,23 +14,34 @@ import styles from '../styles/styles';
 import { ModalInfo } from './Modal';
 
 
-class Tarjeta2 extends Component{
+class TarjetasImport extends Component{
     constructor(){
         super();
         this.state = {
             showModal: false,
             selectedItem: null,
-            toValue:1.2
+            toValue:1.2,
+           
         }
     }
 
     
     keyExtractor = (item,idx) => idx.toString();
 
-    
+    async guardarTarjetas(){
+        try{
+            let guardar = await AsyncStorage.getItem('Usuarios');
+            guardar= JSON.parse(guardar);
+            if(guardar===null) guardar=[];
+            
+            guardar.push(this.props.info);
+            const usuarioGuardar = JSON.stringify(guardar);
+            await AsyncStorage.setItem('Usuarios', usuarioGuardar)
+        } catch (error){
+            console.log(error)
+        }
+    }
 
-    /*guardarTarjeta(){
-    this.props.guardar(this.props.info.login.uuid)}{*/
     
 
     showModal(item){
@@ -64,13 +76,8 @@ class Tarjeta2 extends Component{
             <TouchableOpacity onPress={()=>this.animarTarjeta(item)} >
                 <Animated.View style={[styles.cardTarjeta2, {transform:[{scale: this.position}]}]}> 
 
-                <TouchableOpacity style={ styles.borrar } onPress = { () => this.props.borrarTarjeta(item.login.uuid) }>
-                    <View>
-                    <Text style = { styles.buttonText }>X</Text>
-                    </View>
-                </TouchableOpacity> 
                 
-                <TouchableOpacity  onPress = { ()=> this.props.guardar(item)}>
+                <TouchableOpacity  onPress = { ()=> this.guardarTarjetas.bind(this)}>
                     <View>
                         <Text style = { styles.buttonGuardar }>Guardar</Text>
                     </View>
@@ -129,4 +136,4 @@ class Tarjeta2 extends Component{
 
 
 
-export {Tarjeta2}
+export {TarjetasImport}

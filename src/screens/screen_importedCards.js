@@ -23,7 +23,7 @@ class Screen_importedCards extends Component {
       this.state={
           contador: 0,
           usuariosImportados: [],
-         
+          UsuariosATraer:[], 
 
          
           }
@@ -62,17 +62,17 @@ class Screen_importedCards extends Component {
 
 
 
-  busquedaTarjetas(nombreBuscado){
-    let buscarTarjetas = document.querySelector("#busquedaTarjeta").value.toUpperCase()
+  busquedaTarjetas(item){
+    let buscarTarjetas = this.state.UsuariosATraer.toUpperCase()
     console.log(buscarTarjetas);
-    let buscar = this.state.items.filter((busqueda)=>{
+    let buscar = this.state.UsuariosATraer.filter((busqueda)=>{
        let nombre = busqueda.name.first.toUpperCase()
        let apellido = busqueda.name.last.toUpperCase()
        return nombre.startsWith(buscarTarjetas) || apellido.startsWith(buscarTarjetas) 
        
     })
     this.setState({
-        items : buscar
+        UsuariosATraer : buscar
     }
     
     )
@@ -94,13 +94,14 @@ class Screen_importedCards extends Component {
               </View>
                 
               <View style={styles.mainContainer}>
-
+                  
               
                 <Text>Mis contactos</Text>
-                         {/*} <Text onPress={()=>this.props.navigation.goBack()}>Pagina Anterior</Text>
-                          <Text onPress={()=>this.props.navigation.navigate('Importar tarjetas')}>Ir a importar tarjetas</Text>
-      <Text onPress={()=>this.props.navigation.navigate('Screen 3')}>Acerca de nosotros...</Text>{*/}
-                
+                         
+                <View>
+                  <TextInput style={styles.TextoInput}   onChangeText={ text => this.setState({UsuariosATraer: text})}   placeholder="Busca por un filtro"> </TextInput>
+                  <Button title="Buscar contactos" onChangeText={()=>this.busquedaTarjetas()}>Buscar</Button>
+                </View>
                 
                 <Tarjeta2 info={this.state.usuariosImportados} borrarTarjeta={this.borrarTarjeta.bind(this)}/>
                 

@@ -3,9 +3,9 @@ import React, {Component} from 'react';
 import { getUserData } from '../api/RandomUsers';
 import { Tarjeta2 } from '../components/Tarjetas2';
 import { ModalInfo } from '../components/Modal';
-import { DrawerNavigator } from '../components/DrawerNavigator'
-import { MaterialIcons } from '@expo/vector-icons'
-
+import { DrawerNavigator } from '../components/DrawerNavigator';
+import { MaterialIcons } from '@expo/vector-icons';
+import { TarjetasImport } from '../components/TarjetasImport';
 import{
     View,
     Text,
@@ -59,22 +59,22 @@ class Screen_import extends Component {
         catch(error){
             console.log(error)
         }
-    }
+    } 
 
     
 
-    async storeData(item){
+  /*async storeData(item){
         let usuarios = this.state.usuarios
         usuarios.push(item)
-        this.setState({tarjetasImportadas: tarjetasImportadas})
+        this.setState({usuarios: usuarios})
         try{ 
-          const jsonTarjetasImportadas = JSON.stringify(this.state.tarjetasImportadas);
-          await AsyncStorage.setItem("Usuarios", jsonTarjetasImportadas);
+          const Usuario = JSON.stringify(usuarios);
+          await AsyncStorage.setItem("Usuarios", Usuario);
         }
         catch(e){
           console.log(e)
         }
-    }
+    }*/
 
 
     render(){
@@ -121,7 +121,7 @@ class Screen_import extends Component {
                                 <ActivityIndicator color="Blue" size='large'/>
                             </>
                         :   <>
-                                <Tarjeta2 info={this.state.usuarios} borrarTarjeta={this.borrarTarjeta.bind(this)} guardar={this.storeData.bind(this)}/>
+                                <TarjetasImport info={this.state.usuarios} />
                             </>
                         }
                         
