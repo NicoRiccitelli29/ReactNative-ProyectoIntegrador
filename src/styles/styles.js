@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         margin: 5,
         width: 350,
-        height: 300,
+        height: 400,
         padding: 10
     },
     imageTarjeta2: {

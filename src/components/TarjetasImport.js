@@ -101,7 +101,8 @@ class TarjetasImport extends Component{
                 <Text style={styles.textoTarjeta2}>Fecha de nacimiento:{item.dob.date} ({item.dob.age})</Text>
 
                 <Text style={styles.textoTarjeta2}>Edad: {item.dob.age}</Text>
-               
+                
+                
                
                 </Animated.View>
             </TouchableOpacity>

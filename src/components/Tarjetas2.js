@@ -6,7 +6,8 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-  Animated
+  Animated,
+  TextInput,
   } from 'react-native';
 
 import styles from '../styles/styles';
@@ -19,7 +20,9 @@ class Tarjeta2 extends Component{
         this.state = {
             showModal: false,
             selectedItem: null,
-            toValue:1.2
+            toValue:1.2,
+            comentario: "",
+            textoAComentar: "",
         }
     }
 
@@ -83,8 +86,19 @@ class Tarjeta2 extends Component{
                 <Text style={styles.textoTarjeta2}>Fecha de nacimiento:{item.dob.date} ({item.dob.age})</Text>
 
                 <Text style={styles.textoTarjeta2}>Edad: {item.dob.age}</Text>
-               
-               
+                
+                <Text style={styles.modalText}> 
+                          Comentarios: {this.state.comentario}
+                         {console.log(this.state.comentario)}
+                      </Text>
+                      <Text style={styles.texto}> {this.state.textoAComentar} </Text>
+                      <TextInput style={styles.TextoInput}  onChangeText={text => this.setState({textoAComentar:text})}/>
+                      <TouchableOpacity style={styles.agregar} onPress={() => this.setState({ comentario: this.state.textoAComentar})}>
+                        <View>
+                          <Text style={styles.agregarTexto}>AGREGAR</Text>
+                        </View>
+                        </TouchableOpacity>
+                        
                 </Animated.View>
             </TouchableOpacity>
              
