@@ -7,7 +7,8 @@ import {
   FlatList,
   Image,
   TouchableOpacity,
-  Animated
+  Animated,
+  Alert
   } from 'react-native';
 
 import styles from '../styles/styles';
@@ -28,15 +29,21 @@ class TarjetasImport extends Component{
     
     keyExtractor = (item,idx) => idx.toString();
 
-   async guardarTarjetas(){
+    async componentDidMount(){
+        //await AsyncStorage.removeItem("Usuarios")
+    }
+
+   async guardarTarjetas(item){
         try{
             let guardar = await AsyncStorage.getItem('Usuarios');
             guardar= JSON.parse(guardar);
             if(guardar===null) guardar=[];
             
-            guardar.push(this.props.info);
+            guardar.push(item);
+            console.log(guardar);
             const usuarioGuardar = JSON.stringify(guardar);
             await AsyncStorage.setItem('Usuarios', usuarioGuardar)
+            Alert.alert("Guardado exitosamente")
         } catch (error){
             console.log(error)
         }        
@@ -77,7 +84,7 @@ class TarjetasImport extends Component{
                 <Animated.View style={[styles.cardTarjeta2, {transform:[{scale: this.position}]}]}> 
 
                 
-                <TouchableOpacity  onPress = { ()=> this.guardarTarjetas()}>
+                <TouchableOpacity  onPress = { ()=> this.guardarTarjetas(item)}>
                     <View>
                         <Text style = { styles.buttonGuardar }>Guardar</Text>
                     </View>
