@@ -55,6 +55,7 @@ class Screen_import extends Component {
             const jsonUsuarios= JSON.stringify(this.state.usuarios);
             await AsyncStorage.setItem("Usuarios", jsonUsuarios);
             console.log("Datos guardados correctamente");
+            Alert.alert("Se guardaron los datos correctamente")
         } 
         catch(error){
             console.log(error)

@@ -204,7 +204,10 @@ const styles = StyleSheet.create({
         borderWidth:1,
         fontWeight:'bold'
     },
-
+    contactos:{
+        fontWeight:"bold",
+        fontStyle:'italic'
+    }
 })
 
 export default styles

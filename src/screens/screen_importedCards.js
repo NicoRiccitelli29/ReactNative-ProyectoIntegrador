@@ -66,10 +66,10 @@ class Screen_importedCards extends Component {
     let buscarTarjetas = text.toUpperCase()
    console.log(buscarTarjetas)
     let buscar = this.state.usuariosImportados.filter((busqueda)=>{
-       let nombre = busqueda.name.first.toUpperCase()
-       let apellido = busqueda.name.last.toUpperCase()
-       let ciudad = busqueda.location.city.toUpperCase()
-       let pais = busqueda.location.country.toUpperCase()
+        let nombre = busqueda.name.first.toUpperCase()
+        let apellido = busqueda.name.last.toUpperCase()
+        let ciudad = busqueda.location.city.toUpperCase()
+        let pais = busqueda.location.country.toUpperCase()
        return nombre.startsWith(buscarTarjetas) || apellido.startsWith(buscarTarjetas) || ciudad.startsWith(buscarTarjetas) || pais.startsWith(buscarTarjetas)
        
     })
@@ -98,12 +98,11 @@ class Screen_importedCards extends Component {
               <View style={styles.mainContainer}>
                   
               
-                <Text>Mis contactos</Text>
-                         
+                <Text style={styles.contactos}>Mis contactos</Text>
                 <View>
-                  <TextInput style={styles.TextoInput}   onChangeText={ text => this.busquedaTarjetas(text)}   placeholder="Busca por un filtro"> </TextInput>
-                  <Button title="Buscar contactos" onChangeText={()=>this.busquedaTarjetas()}>Buscar</Button>
-                </View>
+                  <TextInput style={styles.TextoInput} onChangeText={ text => this.busquedaTarjetas(text)} placeholder="Busca por un filtro" keyboardType="default" />
+                </View>           
+                
                 
                 <Tarjeta2 info={this.state.usuariosImportados} borrarTarjeta={this.borrarTarjeta.bind(this)}/>
                 
