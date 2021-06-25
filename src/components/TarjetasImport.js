@@ -12,6 +12,8 @@ import {
   } from 'react-native';
 
 import styles from '../styles/styles';
+import { MaterialIcons } from '@expo/vector-icons'; 
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import { ModalInfo } from './Modal';
 
 
@@ -83,24 +85,29 @@ class TarjetasImport extends Component{
             <TouchableOpacity onPress={()=>this.animarTarjeta(item)} >
                 <Animated.View style={[styles.cardTarjeta2, {transform:[{scale: this.position}]}]}> 
 
-                
-                <TouchableOpacity  onPress = { ()=> this.guardarTarjetas(item)}>
-                    <View>
-                        <Text style = { styles.buttonGuardar }>Guardar</Text>
-                    </View>
-                </TouchableOpacity>
-
                     
+                <Image style={styles.cardImageContainer} source= {{uri: item.picture.thumbnail}}></Image>
+                
+                <View style={styles.cardContentContainer}>
+                    <Text style={styles.cardTitleContainer}>{item.name.last}, {item.name.first}</Text>
                     
-                <Image style={styles.imageTarjeta2} source= {{uri: item.picture.thumbnail}}></Image>
-                
-                <Text style={styles.textoTarjeta2}>Nombre y Apellido: {item.name.last}, {item.name.first}</Text>
-                
-                <Text style={styles.textoTarjeta2}>Email: {item.email}</Text>
-                
-                <Text style={styles.textoTarjeta2}>Fecha de nacimiento:{item.dob.date} ({item.dob.age})</Text>
+                    <Text style={styles.textoTarjeta2}>Email: {item.email}</Text>
+                    
+                    <Text style={styles.textoTarjeta2}>Fecha de nacimiento:{item.dob.date.substring(10,0)}</Text>
 
-                <Text style={styles.textoTarjeta2}>Edad: {item.dob.age}</Text>
+                    <Text style={styles.textoTarjeta2}>Edad: {item.dob.age}</Text>
+                </View>
+
+                <View style={styles.cardButtonContainer}>
+                <MaterialIcons
+                    name="add-box" 
+                    size={24} 
+                    color="grey"
+                    onPress = { ()=> {this.guardarTarjetas(item); this.props.borrarTarjeta(item.login.uuid)}}
+                     />
+                
+                </View>
+                
                 
                 
                

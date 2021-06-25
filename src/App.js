@@ -28,19 +28,19 @@ render(){
       <Drawer.Navigator 
         drawerPosition="left"
         drawerType="slide"
-        overlayColor="azure"
+        overlayColor="whitesmoke"
         initialRouteName="Menu"
         drawerStyle={{
           width:250,
         }}
         drawerContentOptions ={{
           activeTintColor: "white",
-          activeBackgroundColor:  "lightpink" 
+          activeBackgroundColor:  "black" 
         }}
       >
         <Drawer.Screen name='Menu' component={Screen_Menu}/>
-        <Drawer.Screen name='Importar tarjetas' component={Screen_import}/>
-        <Drawer.Screen name='Tarjetas importadas' component={Screen_importedCards} />
+        <Drawer.Screen name='Importar contactos' component={Screen_import}/>
+        <Drawer.Screen name='Mis contactos' component={Screen_importedCards} />
         <Drawer.Screen name='Nosotros' component={Screen_nosotros} />
         <Drawer.Screen name='Papelera' component={Screen_papelera} />
       </Drawer.Navigator>

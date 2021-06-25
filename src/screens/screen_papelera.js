@@ -22,6 +22,7 @@ class Screen_papelera extends Component {
         }
     }
 
+    
 
     borrarTarjeta(uuid){
         Alert.alert('Esta acción no se puede deshacer', 'Está seguro que quiere eliminar esta tarjeta?', [
@@ -58,7 +59,7 @@ class Screen_papelera extends Component {
                         </View>
 
                         <View style={styles.mainContainer}>
-                            <Text>¡Estas en la papelera!</Text>
+                            <Text style={styles.heading}>Papelera</Text>
                             <Tarjeta2 info={this.state.usuariosEliminados} borrarTarjeta={this.borrarTarjeta.bind(this)}/>
                         </View>
                         

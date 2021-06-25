@@ -12,7 +12,7 @@ export class DrawerNavigator extends Component {
                 <Entypo //Es un componente de expo que trae iconos
                     name="menu"
                     size={30}
-                    color="black"
+                    color="white"
                     onPress={()=>this.props.navigator.openDrawer()}
                     /> 
             </View>

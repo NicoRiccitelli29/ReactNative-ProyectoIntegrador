@@ -29,7 +29,7 @@ class Screen_importedCards extends Component {
           }
       }
     
-      
+ 
   
   async getData(){
     try {
@@ -43,8 +43,9 @@ class Screen_importedCards extends Component {
     try {
         const jsonUsuariosAEliminar= JSON.stringify(this.state.usuariosImportados);
         await AsyncStorage.setItem("usuariosEliminados", jsonUsuariosAEliminar);
-        console.log("Datos guardados correctamente");
+        console.log("Usuario eliminado correctamente");
         this.setState({usuariosImportados: ""})
+        
         }
     catch(error){
       console.log(error)
@@ -56,9 +57,12 @@ class Screen_importedCards extends Component {
         let usuarios = this.state.usuariosImportados.filter((usuarios)=>{
           return usuarios.login.uuid !== uuid
               })
-            this.setState({usuariosImportados: usuarios})
-  }
+            this.setState({usuariosImportados: usuarios});
+            
   
+  }
+
+
 
 
 
@@ -96,21 +100,22 @@ class Screen_importedCards extends Component {
               </View>
                 
               <View style={styles.mainContainer}>
-                  
-              
-                <Text style={styles.contactos}>Mis contactos</Text>
+                <Text style={styles.heading}>Mis contactos</Text>
                 <View>
-                  <TextInput style={styles.TextoInput} onChangeText={ text => this.busquedaTarjetas(text)} placeholder="Busca por un filtro" keyboardType="default" />
+                  <TextInput style={styles.searchBar} onChangeText={ text => this.busquedaTarjetas(text)} placeholder="Busca por un filtro" keyboardType="default" />
                 </View>           
-                
-                
-                <Tarjeta2 info={this.state.usuariosImportados} borrarTarjeta={this.borrarTarjeta.bind(this)}/>
-                
+                <Tarjeta2 info={this.state.usuariosImportados} borrarTarjeta={this.borrarTarjeta.bind(this)} />
               </View>
 
-              <View>
-                <Button title='Eliminar contactos importados' onPress={()=>this.RemoveData()}/>
-                <Button title='Mostrar contactos importados' onPress={()=>this.getData()}/>
+              <View style={styles.footer}>
+                <TouchableOpacity style={styles.footerButton} onPress={()=>this.RemoveData()}>
+                  <Text style={styles.footerButtonText}>Borrar contactos</Text>
+                </TouchableOpacity>
+
+                <TouchableOpacity style={styles.footerButton} onPress={()=>this.getData()}>
+                  <Text style={styles.footerButtonText}>Cargar contactos</Text>
+                </TouchableOpacity>
+
               </View>
                   
                 

@@ -9,6 +9,7 @@ const styles = StyleSheet.create({
     header:{
         fontWeight:"bold",  
         justifyContent:'space-between',
+        backgroundColor: 'black',
         alignItems: 'center',
         flex:1, 
         flexDirection:"row",
@@ -16,9 +17,10 @@ const styles = StyleSheet.create({
     },
     headerTextStyle:{
         color: 'white',
+        fontWeight: '400',
         justifyContent:'center',
         alignSelf:'center',
-        fontSize:17,
+        fontSize:16,
         
     },
     addContainer:{
@@ -31,10 +33,34 @@ const styles = StyleSheet.create({
         marginRight: 17
     },
     mainContainer:{
-        flex:10,
+        flex:9,
+        paddingTop: 17,
         backgroundColor: 'white',
+        justifyContent: 'flex-start',
+        alignItems:'center',
+        
+    },
+    footer:{
+        flex:1,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        backgroundColor: 'white',
+        padding: 20
+    },
+    footerButton:{
+        alignItems: 'center',
         justifyContent: 'center',
-        alignItems:'center'
+        height: 50,
+        width: 160,
+        padding: 10,
+        backgroundColor: 'black',
+        borderRadius: 17
+    },
+    footerButtonText:{
+        color: 'white',
+        fontSize: 15,
+        fontWeight: '400'
     },
     paginasHeader:{
         fontSize:20,
@@ -44,21 +70,22 @@ const styles = StyleSheet.create({
         width:'100%',
         height:'100%'
     },
-    nosotrosContenedor :{
+    nosotrosContentContainer :{
         flex:1,
-        justifyContent:"center",
-        alignItems:"center"
+        justifyContent:"flex-start",
+        alignItems:"flex-start",
+        paddingLeft: 20
     },
     nosotrosCard:{
-        backgroundColor:'#fff5ee',
-        borderStyle:"solid",
-        borderWidth: 1,
-        borderRadius: 10,
-        width:300,
-        height:150,
-        padding:10,
+        backgroundColor: '#eeeff3',
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        borderRadius: 15,
+        flexDirection: 'row',
         margin: 5,
-        flexDirection:"column"
+        width: 350,
+        height: 100,
+        padding: 10
     },
     nosotrosAnimated:{
         backgroundColor:'red',
@@ -92,22 +119,49 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         
     },
+    heading:{
+        fontSize: 27,
+        fontWeight:"bold",
+        color: 'black',
+        alignSelf: 'flex-start',
+        justifyContent: 'flex-start',
+        paddingLeft: 17,
+        
+    },
     textoTarjeta2: {
-        fontSize: 20
+        fontSize: 10
+    },
+    cardTitleContainer: {
+        fontSize: 18,
+        fontWeight: '500'
     },
     cardTarjeta2: {
-        backgroundColor: '#ffb6c1',
+        backgroundColor: '#eeeff3',
+        alignItems: 'center',
+        justifyContent: 'space-around',
         borderRadius: 15,
-        flexDirection: 'column',
+        flexDirection: 'row',
         margin: 5,
         width: 350,
-        height: 400,
+        height: 100,
         padding: 10
     },
-    imageTarjeta2: {
-        width: 60,
-        height: 60,
-        borderRadius: 30
+    cardContentContainer: {
+        justifyContent: 'space-between'
+    },
+    cardImageContainer: {
+        width: 55,
+        height: 55,
+        borderRadius: 40
+    },
+    searchBar: {
+        width: 350,
+        height:30,
+        margin:12,
+        padding: 15,
+        borderWidth:0.5,
+        borderColor: 'grey',
+        borderRadius: 15
     },
     modalContainer:{
         flex: 1,
@@ -148,6 +202,9 @@ const styles = StyleSheet.create({
         color:"white",
     },
     borrar:{
+        padding: 10
+    },
+    cardButtonContainer:{
         padding: 10
     },
     burguerButton:{

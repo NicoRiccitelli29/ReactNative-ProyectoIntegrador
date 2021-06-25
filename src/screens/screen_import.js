@@ -108,13 +108,16 @@ class Screen_import extends Component {
                         <MaterialIcons 
                             name='add'
                             size={30}
+                            color="white"
                             onPress={()=>this.setState({modalGetData: true})}
                             style={styles.addContainer}
                         />
                     </View>
 
                     <View style={styles.mainContainer}>
-                        <Text>¡Estas en la pagina de obtencion de usuarios!</Text>
+                        <Text style={styles.heading}>Importar contactos</Text>
+                       
+                        
 
                         {this.state.activity
                         ?   <>
@@ -122,13 +125,13 @@ class Screen_import extends Component {
                                 <ActivityIndicator color="Blue" size='large'/>
                             </>
                         :   <>
-                                <TarjetasImport info={this.state.usuarios} />
+                                <TarjetasImport info={this.state.usuarios} borrarTarjeta={this.borrarTarjeta.bind(this)}/>
                             </>
                         }
                         
                     </View>
 
-                    <View style={{flex:1}}>
+                    <View>
                     
                     <Button title='Guardar contactos' onPress={()=>this.storeDataTodos()}/>
                      {/*} Alcanza con poner el boton de guardar dentro del componente tarjetas?{*/}

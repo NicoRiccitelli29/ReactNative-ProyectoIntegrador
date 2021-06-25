@@ -12,6 +12,10 @@ import {
 
 import styles from '../styles/styles';
 import { ModalInfo } from './Modal';
+import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 
 class Tarjeta2 extends Component{
@@ -21,8 +25,8 @@ class Tarjeta2 extends Component{
             showModal: false,
             selectedItem: null,
             toValue:1.2,
-            comentario: "",
-            textoAComentar: "",
+            text: "",
+            textHandler: "",
         }
     }
 
@@ -67,38 +71,32 @@ class Tarjeta2 extends Component{
             <TouchableOpacity onPress={()=>this.animarTarjeta(item)} >
                 <Animated.View style={[styles.cardTarjeta2, {transform:[{scale: this.position}]}]}> 
 
-                <TouchableOpacity style={ styles.borrar } onPress = { () => this.props.borrarTarjeta(item.login.uuid) }>
-                    <View>
-                    <Text style = { styles.buttonText }>X</Text>
-                    </View>
-                </TouchableOpacity> 
-                
-               
-
                     
                     
-                <Image style={styles.imageTarjeta2} source= {{uri: item.picture.thumbnail}}></Image>
+                <Image style={styles.cardImageContainer} source= {{uri: item.picture.large}}></Image>
                 
-                <Text style={styles.textoTarjeta2}>Nombre y Apellido: {item.name.last}, {item.name.first}</Text>
+                <View style={styles.cardContentContainer}>
+                <Text style={styles.cardTitleContainer}>{item.name.last}, {item.name.first}</Text>
                 
                 <Text style={styles.textoTarjeta2}>Email: {item.email}</Text>
                 
-                <Text style={styles.textoTarjeta2}>Fecha de nacimiento:{item.dob.date} ({item.dob.age})</Text>
+                <Text style={styles.textoTarjeta2}>Fecha de nacimiento:{item.dob.date.substring(0,10)}</Text>
 
                 <Text style={styles.textoTarjeta2}>Edad: {item.dob.age}</Text>
+
+                </View>
+                <View style={styles.cardButtonContainer}>
+                    
+                    <FontAwesome5
+                        name="user-alt-slash"
+                        size={20}
+                        color="black"
+                        onPress={ () => this.props.borrarTarjeta(item.login.uuid) }
+                    />
+                    
+                </View>
                 
-                <Text style={styles.modalText}> 
-                          Comentarios: {this.state.comentario}
-                         {console.log(this.state.comentario)}
-                      </Text>
-                      <Text style={styles.texto}> {this.state.textoAComentar} </Text>
-                      <TextInput style={styles.TextoInput}  onChangeText={text => this.setState({textoAComentar:text})}/>
-                      <TouchableOpacity style={styles.agregar} onPress={() => this.setState({ comentario: this.state.textoAComentar})}>
-                        <View>
-                          <Text style={styles.agregarTexto}>AGREGAR</Text>
-                        </View>
-                        </TouchableOpacity>
-                        
+            
                 </Animated.View>
             </TouchableOpacity>
              
@@ -120,7 +118,7 @@ class Tarjeta2 extends Component{
                         ItemSeparatorComponent={this.separator}
                         showsVerticalScrollIndicator ={false}
                         />
-                        <Text>Presione la tarjeta para ver detalle</Text>
+                        
                     </View>
                 </View>
                 <ModalInfo showModal={this.state.showModal} 

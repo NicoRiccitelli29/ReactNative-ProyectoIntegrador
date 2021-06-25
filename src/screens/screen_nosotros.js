@@ -53,49 +53,51 @@ import styles from '../styles/styles';
                     </View>
                         
                     <View style={styles.mainContainer}>   
-                    <Text style={styles.paginasHeader}>¡Acerca de Nosotros!</Text>
-                        <View style={styles.nosotrosCard}>
-                            
-                            <Image style={styles.nosotrosImage} source={require('../Img/nico.jpg')}/>
-                                <Text style={styles.nosotrosText}>
-                                    Nicolas Eneo Riccitelli
-                                </Text>
-                                <Text>Universidad de San Andrés</Text>
-                                <Text>Estudios: 3 año Negocios Digitales</Text>
-                                <Text>Edad: 20 años</Text>
-                                <Text>Correo: nriccitelli@udesa.edu.ar</Text>
-                            
-                        </View>
-                      
+                    <Text style={styles.heading}>Acerca de nosotros</Text>
 
+                      <View style={styles.nosotrosCard}>
+                        <Image style={styles.cardImageContainer} source={require('../Img/nico.jpg')}/>
+                        <View style={styles.nosotrosContentContainer}>
+                            <Text style={styles.cardTitleContainer}>Nicolas Eneo Riccitelli</Text>
+                            <Text style={styles.textoTarjeta2}>Universidad de San Andrés</Text>
+                            <Text style={styles.textoTarjeta2}>Estudios: 3 año Negocios Digitales</Text>
+                            <Text style={styles.textoTarjeta2}>Edad: 20 años</Text>
+                            <Text style={styles.textoTarjeta2}>Correo: nriccitelli@udesa.edu.ar</Text>
+                        </View>
+                        <View style={styles.cardButtonContainer}></View>
+                      </View>
+
+
+
+                      <View style={styles.nosotrosCard}>
+                        <Image style={styles.cardImageContainer} source={require('../Img/toto.jpeg')}/>
+                        <View style={styles.nosotrosContentContainer}>
+                            <Text style={styles.cardTitleContainer}>Tomas Bongarra</Text>
+                            <Text style={styles.textoTarjeta2}>Universidad de San Andrés</Text>
+                            <Text style={styles.textoTarjeta2}>Estudios: 3º Negocios Digitales</Text>
+                            <Text style={styles.textoTarjeta2}>Edad: 20 años</Text>
+                            <Text style={styles.textoTarjeta2}>Correo: tbongarra@udesa.edu.ar</Text>
+                        </View>
+                        <View style={styles.cardButtonContainer}></View>
+                      </View>
                        
+
+                      <View style={styles.nosotrosCard}>
+                        <Image style={styles.cardImageContainer} source={require('../Img/demi.jpg')}/>
+                        <View style={styles.nosotrosContentContainer}>
+                            <Text style={styles.cardTitleContainer}>Demián Lazarte</Text>
+                            <Text style={styles.textoTarjeta2}>Universidad de San Andrés</Text>
+                            <Text style={styles.textoTarjeta2}>Estudios: 3º Negocios Digitales</Text>
+                            <Text style={styles.textoTarjeta2}>Edad: 24 años</Text>
+                            <Text style={styles.textoTarjeta2}>Correo: dlazarte@udesa.edu.ar</Text>
+                        </View>
+                        <View style={styles.cardButtonContainer}></View>
+                      </View>
                         
                         
 
 
-                        <View style={styles.nosotrosCard}>
-                            <Image style={styles.nosotrosImage} source={require('../Img/toto.jpeg')}/>
-                            <Text style={styles.nosotrosText}>
-                            Tomas Bongarra
-                            </Text>
-                            <Text>Universidad de San Andrés</Text>
-                            <Text>Estudios: 3 año Negocios Digitales</Text>
-                            <Text>Edad: 20 años</Text>
-                            <Text>Correo: tbongarra@udesa.edu.ar</Text>
-                        </View>
-                        
-                        
-                        
-                        <View style={styles.nosotrosCard}>
-                            <Image style={styles.nosotrosImage} source={require('../Img/demi.jpg')}/>
-                            <Text  style={styles.nosotrosText}>
-                                Demian Lazarte
-                            </Text>
-                            <Text>Universidad de San Andrés</Text>
-                            <Text>Estudios: 3 año Negocios Digitales</Text>
-                            <Text>Edad: 24 años</Text>
-                            <Text>Correo: dlazarte@udesa.edu.ar</Text>
-                        </View>
+
                       </View> 
                 </View>
             </ImageBackground>
