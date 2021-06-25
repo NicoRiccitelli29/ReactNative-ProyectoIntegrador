@@ -91,7 +91,7 @@ borrarTarjeta(uuid){
                                 style={styles.footerButton}
                                 onPress={()=>this.borrarEliminados()}
                             >
-                            <Text style={styles.footerButtonText}>Borrar todos</Text>
+                            <Text style={styles.footerButtonText}>Vaciar papelera</Text>
                             </TouchableOpacity>
 
                         </View>

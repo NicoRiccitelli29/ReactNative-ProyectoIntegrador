@@ -23,6 +23,7 @@ class Screen_importedCards extends Component {
       this.state={
           contador: 0,
           usuariosImportados: [],
+          usuariosBorrados: [],
           UsuariosATraer:'', 
 
          
@@ -54,14 +55,35 @@ class Screen_importedCards extends Component {
     }
   }
 
+
   
-  borrarTarjeta(uuid){
+ async borrarTarjeta(uuid){
+   try{
         let usuarios = this.state.usuariosImportados.filter((usuarios)=>{
           return usuarios.login.uuid !== uuid
               })
-            this.setState({usuariosImportados: usuarios});
+        let usuariosBorrados = this.state.usuariosImportados.filter((usuarios)=>{
+          return usuarios.login.uuid == uuid
+        })
+
+        let arrayEliminados = [...this.state.usuariosBorrados,...usuariosBorrados]
+        this.setState({usuariosImportados:usuarios, usuariosBorrados: arrayEliminados})
+        console.log(usuariosBorrados);
+           
+          
+
+            let jsonEliminados = JSON.stringify(arrayEliminados)
+            await AsyncStorage.setItem("usuariosEliminados", jsonEliminados)
             
-  
+
+            let jsonAEliminar = JSON.stringify(usuarios)
+            await AsyncStorage.setItem("Usuarios", jsonAEliminar)
+            
+            ;
+    }catch(e){
+      console.log(e)
+    }
+              
   }
 
 
