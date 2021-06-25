@@ -94,13 +94,19 @@ class Screen_import extends Component {
                         >
                             <View style={styles.modalContainer}>
                             <View style={styles.modalGetData}>
-                                <TextInput style={styles.TextoInput}  min="0" onChangeText={ text => this.setState({UsuariosAImportar: text})}   placeholder="Ingrese un número"/>
-                                <Button 
-                                    title='Obtener contactos.' 
+                                <TextInput style={styles.TextoInput}  
+                                    min="0" 
+                                    onChangeText={ text => this.setState({UsuariosAImportar: text})}   
+                                    placeholder="Ingrese un número"/>
+                                <TouchableOpacity
+                                    style={styles.modalButton}
                                     onPress={
                                         ()=>{this.getDataFromApi(); this.setState({modalGetData:false})}
                                     }
-                                /> 
+                                >
+                                    <Text style={styles.modalButtonText}>Importar</Text>
+                                </TouchableOpacity>
+                                
                             </View>
                             </View>   
                         </Modal>
@@ -131,10 +137,13 @@ class Screen_import extends Component {
                         
                     </View>
 
-                    <View>
+                    <View style={styles.footer}>
+                        <TouchableOpacity
+                            style={styles.footerButton}
+                            onPress={()=>this.storeDataTodos()}>
+                            <Text style={styles.footerButtonText}>Guardar contactos</Text>
+                        </TouchableOpacity>
                     
-                    <Button title='Guardar contactos' onPress={()=>this.storeDataTodos()}/>
-                     {/*} Alcanza con poner el boton de guardar dentro del componente tarjetas?{*/}
                     </View>
             
                 </View>

@@ -102,7 +102,11 @@ class Screen_importedCards extends Component {
               <View style={styles.mainContainer}>
                 <Text style={styles.heading}>Mis contactos</Text>
                 <View>
-                  <TextInput style={styles.searchBar} onChangeText={ text => this.busquedaTarjetas(text)} placeholder="Busca por un filtro" keyboardType="default" />
+                  <TextInput style={styles.searchBar} 
+                    onChangeText={ text => this.busquedaTarjetas(text)} 
+                    placeholder="Buscar por filtro" 
+                    keyboardType="default" 
+                    />
                 </View>           
                 <Tarjeta2 info={this.state.usuariosImportados} borrarTarjeta={this.borrarTarjeta.bind(this)} />
               </View>

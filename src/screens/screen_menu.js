@@ -31,10 +31,8 @@ import {MaterialIcons} from '@expo/vector-icons'
                     </View>
 
                     <View style={styles.mainContainer}>
-                        <Text style={styles.menuTitle}>Bienvenido a la Aplicacion</Text>
-                        <Text style={styles.headerTextStyle}> DNT React Native</Text>
-                        <Text style={styles.paginasHeader}>¡Estas en el menu!</Text>
-                        <Text>Presiona el boton para navegar</Text>
+                        <Text style={styles.menuTitle}>Bienvenido</Text>
+                        <Text style={styles.menuContent}>Presiona el boton para navegar</Text>
                     </View>
                     </View>
                     

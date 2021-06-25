@@ -57,6 +57,21 @@ const styles = StyleSheet.create({
         backgroundColor: 'black',
         borderRadius: 17
     },
+    modalButton:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 30,
+        width: 130,
+        padding: 5,
+        backgroundColor: 'black',
+        borderRadius: 8
+    },
+    modalButtonText:{
+        alignSelf: 'center',
+        justifyContent: 'center',
+        color: 'white',
+        fontSize: 15
+    },
     footerButtonText:{
         color: 'white',
         fontSize: 15,
@@ -126,6 +141,7 @@ const styles = StyleSheet.create({
         alignSelf: 'flex-start',
         justifyContent: 'flex-start',
         paddingLeft: 17,
+        paddingBottom: 17
         
     },
     textoTarjeta2: {
@@ -161,7 +177,9 @@ const styles = StyleSheet.create({
         padding: 15,
         borderWidth:0.5,
         borderColor: 'grey',
-        borderRadius: 15
+        borderRadius: 15,
+        
+        
     },
     modalContainer:{
         flex: 1,
@@ -170,13 +188,17 @@ const styles = StyleSheet.create({
     },
     modalGetData:{
         padding: 20,
-        backgroundColor: 'white',
+        backgroundColor: '#eeeff3',
         justifyContent:"center",
+        alignItems:"center",
         alignSelf:"center",
         borderRadius:10,
-        borderWidth:1,
-        borderStyle:"solid",
-        borderColor:"black"
+        shadowColor: '#eeeff9',
+        shadowRadius: 3,
+        shadowOffset: {width: 1,height: 1},
+        shadowOpacity: 6
+       
+        
     },
     modal:{
         height: '70%',
@@ -232,6 +254,10 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         position: 'absolute',
         top: 200
+    },
+    menuContent:{
+        fontSize: 15,
+        top: 230
     },
     imagenMenu:{
         width:60,

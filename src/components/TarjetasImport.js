@@ -102,7 +102,7 @@ class TarjetasImport extends Component{
                 <MaterialIcons
                     name="add-box" 
                     size={24} 
-                    color="grey"
+                    color="black"
                     onPress = { ()=> {this.guardarTarjetas(item); this.props.borrarTarjeta(item.login.uuid)}}
                      />
                 

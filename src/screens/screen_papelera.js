@@ -6,7 +6,8 @@ import {
     Button,
     SafeAreaView,
     ImageBackground,
-    Alert
+    Alert,
+    TouchableOpacity
 } from 'react-native';
 import { Tarjeta2 } from '../components/Tarjetas2';
 import { DrawerNavigator } from '../components/DrawerNavigator'
@@ -63,8 +64,14 @@ class Screen_papelera extends Component {
                             <Tarjeta2 info={this.state.usuariosEliminados} borrarTarjeta={this.borrarTarjeta.bind(this)}/>
                         </View>
                         
-                        <View>  
-                            <Button title='Mostrar contactos eliminados' onPress={()=>this.usuariosEliminados()}/>
+                        <View style={styles.footer}>  
+                            <TouchableOpacity
+                                style={styles.footerButton}
+                                onPress={()=>this.usuariosEliminados()}
+                            >
+                            <Text style={styles.footerButtonText}>Mostrar eliminados</Text>
+                            </TouchableOpacity>
+
                         </View>
                     </View>
                 </ImageBackground>
