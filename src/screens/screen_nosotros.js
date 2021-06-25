@@ -7,9 +7,11 @@ import {
   Image,
   SafeAreaView,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
+  Button,
+  Animated
   } from 'react-native';
-import Animated from 'react-native-reanimated';
+
 import { DrawerNavigator } from '../components/DrawerNavigator'
 import styles from '../styles/styles';
 
@@ -21,22 +23,10 @@ import styles from '../styles/styles';
             }
         }
 
-        position = new Animated.Value(0);
-       rotation = new Animated.Value(0);
-
-        rotacionTarjeta = ()=> {
-                Animated.timing(this.rotation,{
-                    toValue:1,
-                    duration:1000,
-                   useNativeDriver:true
-                }).start();
-        }
+        
+        
     render(){
 
-        const rotacion = this.rotation.interpolate({
-           inputRange: [0,1],
-            outputRange: ["0deg", "360deg"]
-        })
       
         return(
            <SafeAreaView>
@@ -52,8 +42,9 @@ import styles from '../styles/styles';
                     <View style={styles.mainContainer}>   
                     <Text style={styles.heading}>Acerca de nosotros</Text>
 
-                      <Animated.View style={styles.nosotrosCard, {transform:[{translateY:this.position},{rotateX:this.rotacion}]}}>
-                        <TouchableOpacity onPress={this.rotacionTarjeta}>
+                    
+                    <View style={styles.nosotrosCard}>
+                        
                         <Image style={styles.cardImageContainer} source={require('../Img/nico.jpg')}/>
                         <View style={styles.nosotrosContentContainer}>
                             <Text style={styles.cardTitleContainer}>Nicolas Eneo Riccitelli</Text>
@@ -63,9 +54,8 @@ import styles from '../styles/styles';
                             <Text style={styles.textoTarjeta2}>Correo: nriccitelli@udesa.edu.ar</Text>
                         </View>
                         <View style={styles.cardButtonContainer}></View>
-                        </TouchableOpacity>
-                      </Animated.View>
-
+                    </View>
+                    
 
 
                       <View style={styles.nosotrosCard}>

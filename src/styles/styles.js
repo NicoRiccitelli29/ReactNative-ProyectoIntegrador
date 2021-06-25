@@ -288,6 +288,10 @@ const styles = StyleSheet.create({
     contactos:{
         fontWeight:"bold",
         fontStyle:'italic'
+    },
+    animacion:{
+        width: 350,
+        height: 100,
     }
 })
 
