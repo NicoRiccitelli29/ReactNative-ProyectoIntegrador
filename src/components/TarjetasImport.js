@@ -32,7 +32,7 @@ class TarjetasImport extends Component{
     keyExtractor = (item,idx) => idx.toString();
 
     async componentDidMount(){
-        //await AsyncStorage.removeItem("Usuarios")
+       // await AsyncStorage.removeItem("Usuarios")
     }
 
    async guardarTarjetas(item){

@@ -30,6 +30,7 @@ class Screen_importedCards extends Component {
       }
     
  
+
   
   async getData(){
     try {
@@ -43,6 +44,7 @@ class Screen_importedCards extends Component {
     try {
         const jsonUsuariosAEliminar= JSON.stringify(this.state.usuariosImportados);
         await AsyncStorage.setItem("usuariosEliminados", jsonUsuariosAEliminar);
+        await AsyncStorage.removeItem("Usuarios")
         console.log("Usuario eliminado correctamente");
         this.setState({usuariosImportados: ""})
         

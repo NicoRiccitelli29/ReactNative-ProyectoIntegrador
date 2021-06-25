@@ -91,6 +91,7 @@ class Screen_import extends Component {
                         <Modal 
                             visible={this.state.modalGetData}
                             transparent={true}
+                            animationType='slide'
                         >
                             <View style={styles.modalContainer}>
                             <View style={styles.modalGetData}>

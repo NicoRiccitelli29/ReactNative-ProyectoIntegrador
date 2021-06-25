@@ -174,7 +174,6 @@ const styles = StyleSheet.create({
         width: 350,
         height:30,
         margin:12,
-        padding: 15,
         borderWidth:0.5,
         borderColor: 'grey',
         borderRadius: 15,
@@ -202,12 +201,11 @@ const styles = StyleSheet.create({
     },
     modal:{
         height: '70%',
-        width: '100%',
+        width: '90%',
         backgroundColor:'rgba(0,0,0,0.9)',
         justifyContent:"center",
         alignItems:"center",
-        borderTopLeftRadius:20,
-        borderTopRightRadius:20,
+        borderRadius: 40,
         borderWidth:1,
         borderStyle:"solid",
         borderColor:"black"

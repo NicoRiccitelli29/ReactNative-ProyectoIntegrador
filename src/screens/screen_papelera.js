@@ -25,10 +25,12 @@ class Screen_papelera extends Component {
 
     
 
-    borrarTarjeta(uuid){
+borrarTarjeta(uuid){
         Alert.alert('Esta acción no se puede deshacer', 'Está seguro que quiere eliminar esta tarjeta?', [
             {text: 'OK', onPress:()=> {
+                
                 let usuarios = this.state.usuariosEliminados.filter((usuarios)=>{
+
                     return usuarios.login.uuid !== uuid
                         })
                       this.setState({usuariosEliminados: usuarios})
@@ -37,6 +39,19 @@ class Screen_papelera extends Component {
         ])
         
     }
+
+    async borrarEliminados(){
+        try{
+            await AsyncStorage.removeItem("usuariosEliminados");
+            this.setState({usuariosEliminados: ""});
+            Alert.alert('Esta acción no se puede deshacer', 'Está seguro que quiere borrar todos los contactos?')
+        } catch(error){
+            console.log(error)
+        }
+    }   
+   
+
+    
 
     async usuariosEliminados(){
         try{
@@ -70,6 +85,13 @@ class Screen_papelera extends Component {
                                 onPress={()=>this.usuariosEliminados()}
                             >
                             <Text style={styles.footerButtonText}>Mostrar eliminados</Text>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity
+                                style={styles.footerButton}
+                                onPress={()=>this.borrarEliminados()}
+                            >
+                            <Text style={styles.footerButtonText}>Borrar todos</Text>
                             </TouchableOpacity>
 
                         </View>
