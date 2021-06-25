@@ -44,7 +44,6 @@ import styles from '../styles/styles';
 
                     
                     <View style={styles.nosotrosCard}>
-                        
                         <Image style={styles.cardImageContainer} source={require('../Img/nico.jpg')}/>
                         <View style={styles.nosotrosContentContainer}>
                             <Text style={styles.cardTitleContainer}>Nicolas Eneo Riccitelli</Text>
