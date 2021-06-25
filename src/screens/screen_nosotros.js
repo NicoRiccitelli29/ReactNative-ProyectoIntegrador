@@ -21,26 +21,23 @@ import styles from '../styles/styles';
             }
         }
 
-     //   position = new Animated.Value(0);
-     //  rotation = new Animated.Value(0);
+        position = new Animated.Value(0);
+       rotation = new Animated.Value(0);
 
-      //  rotacionTarjeta = ()=> {
-        //        Animated.timing(this.rotation,{
-          //          toValue:1,
-            //        duration:1000,
-              //      useNativeDriver:true
-                //}).start();
-        //}
+        rotacionTarjeta = ()=> {
+                Animated.timing(this.rotation,{
+                    toValue:1,
+                    duration:1000,
+                   useNativeDriver:true
+                }).start();
+        }
     render(){
 
-       // const rotA = this.rotation.interpolate({
-         //   inputRange: [0,1],
-           // outputRange: ["0deg", "180deg"]
-        //})
-        //const rotB = this.rotation.interpolate({
-          //  inputRange:[0,1],
-            //outputRange: ["180deg", "0deg"]
-        //})
+        const rotacion = this.rotation.interpolate({
+           inputRange: [0,1],
+            outputRange: ["0deg", "360deg"]
+        })
+      
         return(
            <SafeAreaView>
                 <ImageBackground style={styles.imageTotal} source={require('../Img/images.jpg')}>
@@ -55,7 +52,8 @@ import styles from '../styles/styles';
                     <View style={styles.mainContainer}>   
                     <Text style={styles.heading}>Acerca de nosotros</Text>
 
-                      <View style={styles.nosotrosCard}>
+                      <Animated.View style={styles.nosotrosCard, {transform:[{translateY:this.position},{rotateX:this.rotacion}]}}>
+                        <TouchableOpacity onPress={this.rotacionTarjeta}>
                         <Image style={styles.cardImageContainer} source={require('../Img/nico.jpg')}/>
                         <View style={styles.nosotrosContentContainer}>
                             <Text style={styles.cardTitleContainer}>Nicolas Eneo Riccitelli</Text>
@@ -65,7 +63,8 @@ import styles from '../styles/styles';
                             <Text style={styles.textoTarjeta2}>Correo: nriccitelli@udesa.edu.ar</Text>
                         </View>
                         <View style={styles.cardButtonContainer}></View>
-                      </View>
+                        </TouchableOpacity>
+                      </Animated.View>
 
 
 
