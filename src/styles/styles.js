@@ -187,15 +187,16 @@ const styles = StyleSheet.create({
     },
     modalGetData:{
         padding: 20,
+        width: 250,
         backgroundColor: '#eeeff3',
         justifyContent:"center",
         alignItems:"center",
         alignSelf:"center",
         borderRadius:10,
-        shadowColor: '#eeeff9',
-        shadowRadius: 3,
+        shadowColor: 'black',
+        shadowRadius: 1,
         shadowOffset: {width: 1,height: 1},
-        shadowOpacity: 6
+        shadowOpacity: 0.2
        
         
     },
@@ -206,12 +207,12 @@ const styles = StyleSheet.create({
         justifyContent:"center",
         alignItems:"center",
         borderRadius: 40,
-        borderWidth:0.2,
+        borderWidth:0.1,
         borderStyle:"solid",
-        borderColor:"grey",
-        shadowColor: 'black',
+        borderColor:"#eeeff3",
+        shadowColor: 'grey',
         shadowOffset: {height:1, width: 1},
-        shadowRadius: 2,
+        shadowRadius: 1,
         shadowOpacity: 0.2
     },
     modalHeadingContainer: {
@@ -271,6 +272,17 @@ const styles = StyleSheet.create({
         paddingLeft: 10
 
     },
+    otroModalInput:{
+        height:35,
+        width: 160,
+        backgroundColor:'white',
+        marginBottom:15,
+        marginTop: 10,
+        borderWidth:0.1,
+        borderRadius: 8,
+        paddingLeft: 10
+    },
+   
     Comentario:{
         paddingTop:10,
         fontSize: 18

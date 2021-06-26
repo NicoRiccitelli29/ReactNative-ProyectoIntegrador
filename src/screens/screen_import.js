@@ -5,6 +5,7 @@ import { Tarjeta2 } from '../components/Tarjetas2';
 import { ModalInfo } from '../components/Modal';
 import { DrawerNavigator } from '../components/DrawerNavigator';
 import { MaterialIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import { TarjetasImport } from '../components/TarjetasImport';
 import{
     View,
@@ -95,7 +96,8 @@ class Screen_import extends Component {
                         >
                             <View style={styles.modalContainer}>
                             <View style={styles.modalGetData}>
-                                <TextInput style={styles.TextoInput}  
+                                <Text style={styles.cardTitleContainer}>¿Cuántos contactos?</Text>
+                                <TextInput style={styles.otroModalInput}  
                                     min="0" 
                                     onChangeText={ text => this.setState({UsuariosAImportar: text})}   
                                     placeholder="Ingrese un número"/>
@@ -112,8 +114,8 @@ class Screen_import extends Component {
                             </View>   
                         </Modal>
 
-                        <MaterialIcons 
-                            name='add'
+                        <AntDesign
+                            name='adduser'
                             size={30}
                             color="white"
                             onPress={()=>this.setState({modalGetData: true})}
