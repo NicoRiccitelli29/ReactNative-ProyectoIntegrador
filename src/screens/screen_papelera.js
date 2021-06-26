@@ -62,6 +62,7 @@ borrarTarjeta(uuid){
         }
     }   
 
+    
 	render () {
 		return (
 			<SafeAreaView>

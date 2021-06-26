@@ -201,25 +201,79 @@ const styles = StyleSheet.create({
     },
     modal:{
         height: '70%',
-        width: '90%',
-        backgroundColor:'rgba(0,0,0,0.9)',
+        width: '85%',
+        backgroundColor:'#eeeff3',
         justifyContent:"center",
         alignItems:"center",
         borderRadius: 40,
-        borderWidth:1,
+        borderWidth:0.2,
         borderStyle:"solid",
-        borderColor:"black"
+        borderColor:"grey",
+        shadowColor: 'black',
+        shadowOffset: {height:1, width: 1},
+        shadowRadius: 2,
+        shadowOpacity: 0.2
     },
+    modalHeadingContainer: {
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
+        
+    },
+    modalImageContainer: {
+        width: 80,
+        height: 80,
+        borderRadius: 40,
+    },
+    modalTitleContainer:{
+        padding: 5,
+        fontSize: 24,
+        fontWeight: '600'
+    },
+    modalContentContainer: {
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+        paddingTop: 5
+    },
+    modalFooter:{
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    
     modalText:{
-        fontSize:20,
-        color:"white",
+        fontSize:14,
+        color:"black",
     },
     modalButtonClose:{
         position:'absolute',
         right: 20,
         top:10,
-        fontSize:20,
-        color:"white",
+        color:"dimgray",
+        padding: 10,
+    },
+    modalFooterButton:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 40,
+        width: 130,
+        padding: 5,
+        backgroundColor: 'black',
+        borderRadius: 8
+    },
+    modalInput:{
+        height:35,
+        width: 260,
+        backgroundColor:'white',
+        marginBottom:15,
+        marginTop: 10,
+        borderWidth:0.1,
+        borderRadius: 8,
+        paddingLeft: 10
+
+    },
+    Comentario:{
+        paddingTop:10,
+        fontSize: 18
     },
     borrar:{
         padding: 10
